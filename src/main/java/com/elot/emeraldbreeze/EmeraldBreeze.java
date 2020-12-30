@@ -66,7 +66,7 @@ public class EmeraldBreeze
                     blockItem.setRegistryName(block.getRegistryName());
                     registry.register(blockItem);
                 });
-        LOGGER.info("Registered BlockItems.");
+        LOGGER.info("REGISTERED BLOCK-ITEMS");
     }
 
     //Creative Mode tabs

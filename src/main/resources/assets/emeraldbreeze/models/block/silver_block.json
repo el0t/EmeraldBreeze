@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "emeraldbreeze:blocks/onyx_block"
+    "all": "emeraldbreeze:blocks/silver_block"
   }
 }
