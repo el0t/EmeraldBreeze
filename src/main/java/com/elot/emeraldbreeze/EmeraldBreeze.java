@@ -1,5 +1,6 @@
 package com.elot.emeraldbreeze;
 
+import com.elot.emeraldbreeze.core.init.BlockInit;
 import com.elot.emeraldbreeze.core.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
