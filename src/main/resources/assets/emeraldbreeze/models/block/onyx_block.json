@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "el0t:blocks/onyx_block"
+  }
+}
