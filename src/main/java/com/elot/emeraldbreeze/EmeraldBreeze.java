@@ -52,7 +52,7 @@ public class EmeraldBreeze
 
 
     //Creative Mode tabs
-    public static final ItemGroup TAB = new ItemGroup("EmeraldBreeze") {
+    public static final ItemGroup TAB = new ItemGroup("eb1") {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(ItemInit.ONYX.get());
