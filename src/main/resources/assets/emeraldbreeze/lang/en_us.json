@@ -1,4 +1,6 @@
 {
   "itemGroup.eb1": "EmeraldBreeze",
-  "item.emeraldbreeze.onyx": "Onyx"
+  "item.emeraldbreeze.onyx": "Onyx",
+  "block.emeraldbreeze.onyx_block": "Block of Onyx",
+  "block.emeraldbreeze.silver_block": "Block of Silver"
 }
