@@ -55,20 +55,6 @@ public class EmeraldBreeze
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
-    // Register BlockItems
-    @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
-        final IForgeRegistry<Item> registry = event.getRegistry();
-        BlockInit.BLOCKS.getEntries().stream().filter(block ->!(block.get() instanceof ModCrop))
-                .map(RegistryObject::get).forEach(block -> {
-                    final Item.Properties properties = new Item.Properties().group(EmeraldBreeze.TAB);
-                    final BlockItem blockItem = new BlockItem(block, properties);
-                    blockItem.setRegistryName(block.getRegistryName());
-                    registry.register(blockItem);
-                });
-        LOGGER.info("REGISTERED BLOCK-ITEMS");
-    }
-
     //Creative Mode tabs
     public static final ItemGroup TAB = new ItemGroup("eb1") {
         @Override
