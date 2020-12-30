@@ -3,6 +3,8 @@ package com.elot.emeraldbreeze;
 import com.elot.emeraldbreeze.core.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -46,5 +48,13 @@ public class EmeraldBreeze
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
+
+
+    //Creative Mode tabs
+    public static final ItemGroup TAB = new ItemGroup("EmeraldBreeze") {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ItemInit.ONYX.get());
+        }};
 
 }
