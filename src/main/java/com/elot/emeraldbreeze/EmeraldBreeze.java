@@ -42,7 +42,7 @@ public class EmeraldBreeze
         bus.addListener(this::setup);
 
         ItemInit.ITEMS.register(bus);
-
+        BlockInit.BLOCKS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -53,20 +53,6 @@ public class EmeraldBreeze
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-    }
-
-    // Register BlockItems
-    @SubscribeEvent
-    public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
-        final IForgeRegistry<Item> registry = event.getRegistry();
-        BlockInit.BLOCKS.getEntries().stream().filter(block ->!(block.get() instanceof ModCrop))
-                .map(RegistryObject::get).forEach(block -> {
-                    final Item.Properties properties = new Item.Properties().group(EmeraldBreeze.TAB);
-                    final BlockItem blockItem = new BlockItem(block, properties);
-                    blockItem.setRegistryName(block.getRegistryName());
-                    registry.register(blockItem);
-                });
-        LOGGER.info("Registered BlockItems.");
     }
 
     //Creative Mode tabs
