@@ -1,8 +1,10 @@
 package com.elot.emeraldbreeze.core.init;
 
 import com.elot.emeraldbreeze.EmeraldBreeze;
+import com.elot.emeraldbreeze.blocks.ModOreBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.OreBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -28,5 +30,18 @@ public class BlockInit {
             ()-> new Block(AbstractBlock.Properties.create(Material.IRON, MaterialColor.BLUE)
                     .hardnessAndResistance(12.0f,45.0f).harvestTool(ToolType.PICKAXE)
                     .harvestLevel(3).sound(SoundType.METAL)));
+    public static final RegistryObject<Block> ONYX_ORE = BLOCKS.register("onyx_ore",
+            () -> new ModOreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLACK)
+                    .hardnessAndResistance(3.0f,3.0f).harvestTool(ToolType.PICKAXE)
+                    .harvestLevel(2).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SILVER_ORE = BLOCKS.register("silver_ore",
+            () -> new ModOreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.STONE)
+                    .hardnessAndResistance(3.0f,3.0f).harvestTool(ToolType.PICKAXE)
+                    .harvestLevel(1).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> MITHRIL_ORE = BLOCKS.register("mithril_ore",
+            () -> new ModOreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.BLUE)
+                    .hardnessAndResistance(5.0f,10.0f).harvestTool(ToolType.PICKAXE)
+                    .harvestLevel(3).sound(SoundType.STONE)));
+
 
 }
