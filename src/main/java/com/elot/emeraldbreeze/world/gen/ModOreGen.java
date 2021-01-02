@@ -35,13 +35,13 @@ public class ModOreGen {
                 OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.ONYX_ORE.get().getDefaultState(),
                 3)                          //vein size
                 ).range(34).square()  //spawn height
-                .func_242731_b(64))); //frequency of veins per chunk
+                .func_242731_b(8))); //frequency of veins per chunk
         overworldOres.add(register("silver_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
                 OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.SILVER_ORE.get().getDefaultState(),
-                8)).range(64).square().func_242731_b(64)));
+                8)).range(64).square().func_242731_b(16)));
         overworldOres.add(register("mithril_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
                 OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.MITHRIL_ORE.get().getDefaultState(),
-                6)).range(16).square().func_242731_b(64)));
+                6)).range(20).square().func_242731_b(8)));
         //Nether Ores
         //End Ores
     }
