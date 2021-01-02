@@ -34,7 +34,7 @@ public class ModOreGen {
         overworldOres.add(register("onyx_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
                 OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.ONYX_ORE.get().getDefaultState(),
                 3)                          //vein size
-                ).range(34).square()  //spawn height
+                ).range(39).square()  //spawn height
                 .func_242731_b(8))); //frequency of veins per chunk
         overworldOres.add(register("silver_ore", Feature.ORE.withConfiguration(new OreFeatureConfig(
                 OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.SILVER_ORE.get().getDefaultState(),
