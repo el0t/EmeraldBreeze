@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "X#",
+    " #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "emeraldbreeze:mithril_ingot"
+    }
+  },
+  "result": {
+    "item": "emeraldbreeze:mithril_axe"
+  }
+}
