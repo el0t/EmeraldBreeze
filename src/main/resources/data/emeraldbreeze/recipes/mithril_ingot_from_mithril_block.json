@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "emeraldbreeze:mithril_ingot",
+  "ingredients": [
+    {
+      "item": "emeraldbreeze:mithril_block"
+    }
+  ],
+  "result": {
+    "item": "emeraldbreeze:mithril_ingot",
+    "count": 9
+  }
+}

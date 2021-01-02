@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "emeraldbreeze:silver_ingot"
+    }
+  },
+  "result": {
+    "item": "emeraldbreeze:silver_block"
+  }
+}

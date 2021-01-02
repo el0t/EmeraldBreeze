@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "emeraldbreeze:onyx",
+  "ingredients": [
+    {
+      "item": "emeraldbreeze:onyx_block"
+    }
+  ],
+  "result": {
+    "item": "emeraldbreeze:onyx",
+    "count": 9
+  }
+}

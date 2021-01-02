@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "emeraldbreeze:silver_ingot",
+  "ingredients": [
+    {
+      "item": "emeraldbreeze:silver_block"
+    }
+  ],
+  "result": {
+    "item": "emeraldbreeze:silver_ingot",
+    "count": 9
+  }
+}
