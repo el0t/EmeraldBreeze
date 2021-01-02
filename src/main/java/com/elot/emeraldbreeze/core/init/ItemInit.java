@@ -12,7 +12,7 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EmeraldBreeze.MOD_ID);
 
-    public static final RegistryObject<Item> ONYX = ITEMS.register("onyx",
+        public static final RegistryObject<Item> ONYX = ITEMS.register("onyx",
             () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot",
             () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));

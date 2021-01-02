@@ -1,9 +1,14 @@
 {
   "itemGroup.eb1": "EmeraldBreeze",
   "item.emeraldbreeze.onyx": "Onyx",
+  "block.emeraldbreeze.onyx_ore": "Onyx Ore",
   "block.emeraldbreeze.onyx_block": "Block of Onyx",
   "item.emeraldbreeze.silver_ingot": "Silver Ingot",
+  "block.emeraldbreeze.silver_ore": "Silver Ore",
   "block.emeraldbreeze.silver_block": "Block of Silver",
   "item.emeraldbreeze.mithril_ingot": "Mithril Ingot",
+  "block.emeraldbreeze.mithril_ore": "Mithril Ore",
   "block.emeraldbreeze.mithril_block": "Block of Mithril"
+
+
 }

@@ -3,6 +3,7 @@ package com.elot.emeraldbreeze;
 import com.elot.emeraldbreeze.blocks.ModCrop;
 import com.elot.emeraldbreeze.core.init.BlockInit;
 import com.elot.emeraldbreeze.core.init.ItemInit;
+import com.elot.emeraldbreeze.world.gen.ModOreGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -51,8 +52,10 @@ public class EmeraldBreeze
     private void setup(final FMLCommonSetupEvent event)
     {
         // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        /* LOGGER.info("HELLO FROM PREINIT");
+           LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName()); */
+        // ore generation
+        ModOreGen.registerOres();
     }
 
     //Creative Mode tabs
