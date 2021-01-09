@@ -17,6 +17,13 @@
   "item.emeraldbreeze.mithril_helmet": "Mithril Helmet",
   "item.emeraldbreeze.mithril_chestplate": "Mithril Chestplate",
   "item.emeraldbreeze.mithril_leggings": "Mithril Leggings",
-  "item.emeraldbreeze.mithril_boots": "Mithril Boots"
+  "item.emeraldbreeze.mithril_boots": "Mithril Boots",
+  "block.emeraldbreeze.corellian_corn": "Corellian Corn",
+  "item.emeraldbreeze.corellian_seed": "Corellian Seed",
+  "item.emeraldbreeze.corellian_corncob": "Corellian Corncob",
+  "item.emeraldbreeze.popcorn": "Popcorn",
+  "block.emeraldbreeze.garlic": "Garlic",
+  "item.emeraldbreeze.garlic_seed": "Garlic Seed",
+  "item.emeraldbreeze.garlic": "Garlic"
 
 }
