@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "emeraldbreeze:corellian_corncob"
+  },
+  "result": {
+    "item": "emeraldbreeze:popcorn",
+    "count": 4
+  },
+  "experience": 0.20,
+  "cookingtime": 50
+}
