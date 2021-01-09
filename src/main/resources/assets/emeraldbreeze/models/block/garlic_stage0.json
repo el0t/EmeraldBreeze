@@ -1,0 +1,7 @@
+
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "emeraldbreeze:blocks/garlic_stage0"
+  }
+}
