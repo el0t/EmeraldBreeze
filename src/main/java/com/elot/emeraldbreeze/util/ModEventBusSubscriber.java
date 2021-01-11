@@ -3,6 +3,8 @@ package com.elot.emeraldbreeze.util;
 import com.elot.emeraldbreeze.EmeraldBreeze;
 import com.elot.emeraldbreeze.blocks.ModCrop;
 import com.elot.emeraldbreeze.core.init.BlockInit;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -10,6 +12,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.Objects;
@@ -29,4 +32,11 @@ public class ModEventBusSubscriber {
                 });
         EmeraldBreeze.LOGGER.info("REGISTERED BLOCK-ITEMS");
     }
+
+    @SubscribeEvent
+    public static void clientSetup(FMLClientSetupEvent event){
+        RenderTypeLookup.setRenderLayer(BlockInit.CORELLIAN_CORN.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.GARLIC_CROP.get(), RenderType.getCutout());
+    }
+
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "emeraldbreeze:blocks/corellian_corn_stage4"
+  }
+}
