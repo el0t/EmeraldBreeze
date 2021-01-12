@@ -48,7 +48,7 @@ public class DehydratorTileEntity extends TileEntity implements ITickableTileEnt
     private ITextComponent customName;
     private ModItemHandler inventory;
     private int[] dryTimes = {0,0,0,0,0,0,0,0,0,0,0,0};
-    private int maxDryTime = 1200;
+    private int maxDryTime = 900;
 
     public DehydratorTileEntity(TileEntityType<?> tileEntityTypeIn){
         super(tileEntityTypeIn);
