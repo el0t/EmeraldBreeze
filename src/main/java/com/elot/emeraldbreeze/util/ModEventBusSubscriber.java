@@ -37,6 +37,7 @@ public class ModEventBusSubscriber {
     public static void clientSetup(FMLClientSetupEvent event){
         RenderTypeLookup.setRenderLayer(BlockInit.CORELLIAN_CORN.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.GARLIC_CROP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.DEHYDRATOR.get(), RenderType.getCutout());
     }
 
 }
