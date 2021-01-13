@@ -209,6 +209,8 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
                             this.items.insertItem(index, output.copy(), false);
                             //TODO  this will not work until we make
                             //      the maximum size of the stack 1 item somehow
+                            // Furthermore, placing a Dehydrator block caused my game to throw a
+                            // "Ticking block entity" NullPointer exception at line 200 :)
                             dirty = true;
                         }
                     }
