@@ -28,6 +28,6 @@ public class BlockInit {
 
     public static final RegistryObject<Block> DEHYDRATOR = BLOCKS.register("dehydrator", () -> new DehydratorBlock(AbstractBlock.Properties.create(Material.IRON)));
     //TODO - Dehydrator assets + data.
-    // blockstates, lang, model, textures, loot table (?), and crafting recipe
+    // loot table (?), and crafting recipe
 
 }
