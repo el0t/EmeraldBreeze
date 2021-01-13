@@ -54,8 +54,6 @@ public class DehydratorContainer extends Container {
         }
 
 
-        //TODO build player inventory, and hotbar
-
 
 
     }
