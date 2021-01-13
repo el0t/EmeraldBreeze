@@ -3,7 +3,6 @@ package com.elot.emeraldbreeze.core.init;
 import com.elot.emeraldbreeze.EmeraldBreeze;
 import com.elot.emeraldbreeze.inventory.container.DehydratorContainer;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

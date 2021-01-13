@@ -6,6 +6,8 @@ import com.elot.emeraldbreeze.tileentity.DehydratorTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.Slot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
@@ -22,9 +24,37 @@ public class DehydratorContainer extends Container {
         this.tileEntity = tileEntity;
         this.canInteractWithCallable = IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos());
 
-        //TODO
-        // build interface of slots
+        //Dehydrator inventory
+        int startX = 0;//TODO gui
+        int startY = 0;//  replace values after making gui
+        int slotSizePlus2 = 18;
+        for(int row = 0; row < 3; row++){
+            for(int column = 0; column < 4; column++){
+                this.addSlot(new Slot(tileEntity, (row*4)+column, //Genius maths from turty for the index
+                        startX + (column*slotSizePlus2),
+                        startY + (row*slotSizePlus2)){
+                    public int getSlotStackLimit(){ return 1; }
+                    // this should set the maximum pieces of jerky to 1 per slot
+                });
+            }
+        }
+        //Player inventory
+        int startPlayerY = 0;//TODO replace after making Gui
+        for(int row = 0; row < 3; row++){
+            for(int column = 0; column < 9; column++){
+                this.addSlot(new Slot(playerInventory, 9 + (row*9)+column,
+                        startX + (column*slotSizePlus2),
+                        startPlayerY + (row*slotSizePlus2)));
+            }
+        }
+        //Hotbar inventory
+        int hotbarY = 0;//TODO Make gui
+        for(int column = 0; column < 9; column++){
+            this.addSlot(new Slot(playerInventory,column,startX+(column*slotSizePlus2),hotbarY));
+        }
 
+
+        //TODO build player inventory, and hotbar
 
 
 
@@ -33,7 +63,7 @@ public class DehydratorContainer extends Container {
         this(windowId, playerInventory, getTileEntity(playerInventory, data));
     }
 
-    private static DehydratorTileEntity getTileEntity(PlayerInventory playerInventory, PacketBuffer data) {
+    private static DehydratorTileEntity getTileEntity(final PlayerInventory playerInventory, final PacketBuffer data) {
         Objects.requireNonNull(playerInventory,"playerInventory cannot be null");
         Objects.requireNonNull(data, "data cannot be null");
         final TileEntity tileEntityAtPos = playerInventory.player.world.getTileEntity(data.readBlockPos());
@@ -47,7 +77,26 @@ public class DehydratorContainer extends Container {
     public boolean canInteractWith(PlayerEntity playerIn) {
         return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.DEHYDRATOR.get());
     }
-
-    //TODO
-    // Override public ItemStack transferStackInSlot --
+    @Override
+    public ItemStack transferStackInSlot(PlayerEntity playerIn, int index){
+        ItemStack itemStack = ItemStack.EMPTY;
+        Slot slot = this.inventorySlots.get(index);
+        if (slot!=null && slot.getHasStack()){
+            ItemStack slotStack = slot.getStack();
+            itemStack = slotStack.copy();
+            if(index<36){
+                if(!this.mergeItemStack(slotStack,36,this.inventorySlots.size(), true)){
+                    return ItemStack.EMPTY;
+                }
+            } else if(!this.mergeItemStack(slotStack, 0, 36, false)){
+                return ItemStack.EMPTY;
+            }
+            if (slotStack.isEmpty()){
+                slot.putStack(ItemStack.EMPTY);
+            } else {
+                slot.onSlotChanged();
+            }
+        }
+        return itemStack;
+    }
 }

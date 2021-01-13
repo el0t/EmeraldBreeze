@@ -9,12 +9,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 
-public class ModRecipe implements IModRecipe {
+public class DehydratingRecipe implements IModRecipe {
 
     private final ResourceLocation id;
     private Ingredient input;
     private final ItemStack output;
-    public ModRecipe(ResourceLocation id, Ingredient input, ItemStack output){
+    public DehydratingRecipe(ResourceLocation id, Ingredient input, ItemStack output){
         this.id = id;
         this.input = input;
         this.output = output;

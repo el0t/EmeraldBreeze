@@ -12,12 +12,13 @@ import javax.annotation.Nonnull;
 
 public interface IModRecipe extends IRecipe<RecipeWrapper> {
 
-    ResourceLocation RECIPE_TYPE_ID = new ResourceLocation(EmeraldBreeze.MOD_ID, "modrecipes");
+    ResourceLocation DEHYDRATING = new ResourceLocation(EmeraldBreeze.MOD_ID, "dehydrating");
+    ResourceLocation TUMBLING = new ResourceLocation(EmeraldBreeze.MOD_ID, "tumbling");
 
     @Nonnull
     @Override
     default IRecipeType<?> getType(){
-        return Registry.RECIPE_TYPE.getOrDefault(RECIPE_TYPE_ID);
+        return Registry.RECIPE_TYPE.getOrDefault(DEHYDRATING);
     }
     @Override
     default boolean canFit(int width, int height){

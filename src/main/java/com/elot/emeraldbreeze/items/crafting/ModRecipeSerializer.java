@@ -12,28 +12,28 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 
 import javax.annotation.Nullable;
 
-public class ModRecipeSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<ModRecipe> {
+public class ModRecipeSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<DehydratingRecipe> {
 
 
     @Override
-    public ModRecipe read(ResourceLocation recipeId, JsonObject json) {
+    public DehydratingRecipe read(ResourceLocation recipeId, JsonObject json) {
         ItemStack output = CraftingHelper.getItemStack(JSONUtils.getJsonObject(json, "output"), true);
         Ingredient input = Ingredient.deserialize(JSONUtils.getJsonObject(json, "input"));
 
-        return new ModRecipe(recipeId, input, output);
+        return new DehydratingRecipe(recipeId, input, output);
     }
 
     @Nullable
     @Override
-    public ModRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
+    public DehydratingRecipe read(ResourceLocation recipeId, PacketBuffer buffer) {
         ItemStack output = buffer.readItemStack();
         Ingredient input = Ingredient.read(buffer);
 
-        return new ModRecipe(recipeId, input, output);
+        return new DehydratingRecipe(recipeId, input, output);
     }
 
     @Override
-    public void write(PacketBuffer buffer, ModRecipe recipe) {
+    public void write(PacketBuffer buffer, DehydratingRecipe recipe) {
         Ingredient input = recipe.getIngredients().get(0);
         input.write(buffer);
 

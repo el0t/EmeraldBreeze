@@ -27,8 +27,9 @@ public class EmeraldBreeze
 
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
-        ContainerTypeInit.CONTAINER_TYPES.register(bus);
         TileEntityTypeInit.TILE_ENTITY_TYPES.register(bus);
+        ContainerTypeInit.CONTAINER_TYPES.register(bus);
+
 
         RecipeSerializerInit.RECIPE_SERIALIZERS.register(bus);
 

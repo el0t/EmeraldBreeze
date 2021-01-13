@@ -2,7 +2,7 @@ package com.elot.emeraldbreeze.core.init;
 
 import com.elot.emeraldbreeze.EmeraldBreeze;
 import com.elot.emeraldbreeze.items.crafting.IModRecipe;
-import com.elot.emeraldbreeze.items.crafting.ModRecipe;
+import com.elot.emeraldbreeze.items.crafting.DehydratingRecipe;
 import com.elot.emeraldbreeze.items.crafting.ModRecipeSerializer;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -15,13 +15,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class RecipeSerializerInit {
 
-    public static final IRecipeSerializer<ModRecipe> MOD_RECIPE_SERIALIZER = new ModRecipeSerializer();
-    public static final IRecipeType<IModRecipe> DEHYDRATING = registerType(IModRecipe.RECIPE_TYPE_ID);
+    public static final IRecipeSerializer<DehydratingRecipe> DEHYDRATING_RECIPE_SERIALIZER = new ModRecipeSerializer();
+    public static final IRecipeType<IModRecipe> DEHYDRATING = registerType(IModRecipe.DEHYDRATING);
 
     public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, EmeraldBreeze.MOD_ID);
 
-    public static final RegistryObject<IRecipeSerializer<?>> MOD_SERIALIZER = RECIPE_SERIALIZERS.register("modrecipes",
-            () -> MOD_RECIPE_SERIALIZER);
+    public static final RegistryObject<IRecipeSerializer<?>> MOD_SERIALIZER = RECIPE_SERIALIZERS.register("dehydrating",
+            () -> DEHYDRATING_RECIPE_SERIALIZER);
 
     private static class RecipeType<T extends IRecipe<?>> implements IRecipeType<T> {
         @Override
