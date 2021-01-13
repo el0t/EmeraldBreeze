@@ -58,7 +58,7 @@ import java.util.stream.Collectors;
 public class DehydratorTileEntity extends LockableLootTileEntity implements ITickableTileEntity, INamedContainerProvider {
     private NonNullList<ItemStack> inventoryContents = NonNullList.withSize(12, ItemStack.EMPTY);
     protected int numPlayersUsing;
-    private ModItemHandler items; 
+    private ModItemHandler items;
     private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
     private ITextComponent customName;
     private int[] dryTimes = {0,0,0,0,0,0,0,0,0,0,0,0};
@@ -225,7 +225,6 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     @Nullable
     private DehydratingRecipe getRecipe(ItemStack stack){
         if(stack==null){ return null; }
-        //TODO figure out recipes. I don't even know if this code will work:
         Set<IRecipe<?>> recipes = findRecipesByType(RecipeSerializerInit.DEHYDRATING, this.world);
         for(IRecipe<?> iRecipe : recipes){
             DehydratingRecipe recipe = (DehydratingRecipe) iRecipe;
