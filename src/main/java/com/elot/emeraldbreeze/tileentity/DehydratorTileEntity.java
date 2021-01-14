@@ -64,7 +64,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
     private ITextComponent customName;
     private int[] dryTimes = {0,0,0,0,0,0,0,0,0,0,0,0};
-    private int maxDryTime = 900;//TODO the drying process may need an overhaul - not confident this will work.
+    private int maxDryTime = 900;//TODO why does this only cook in slot 1?
 
     public DehydratorTileEntity(TileEntityType<?> tileEntityTypeIn){
         super(tileEntityTypeIn);
