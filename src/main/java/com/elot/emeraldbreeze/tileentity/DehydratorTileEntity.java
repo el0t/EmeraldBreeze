@@ -218,6 +218,8 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
                             this.items.insertItem(index, output.copy(), false);
                             //TODO
                             // Why does this only work for the first slot :*)
+                            // Changing the starting index to 2 made all slots after 3rd slot into maps simultaneously
+                            // even if there was no leather present in following slots. First 2 slots unchanged.
                             dirty = true;
                         }
                     }
