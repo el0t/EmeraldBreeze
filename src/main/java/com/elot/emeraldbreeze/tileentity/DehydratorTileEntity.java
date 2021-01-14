@@ -185,8 +185,9 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     }
 
     //DEHYDRATOR SPECIFIC METHODS
+
     @Override
-    public void tick(){
+    public void tick(){ /*TODO fix
         boolean dirty = false;
         Biome biome = world.getBiome(this.getPos());
         int adjustedDryTime = this.maxDryTime;
@@ -221,7 +222,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
             this.markDirty();
             this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(),
                     Constants.BlockFlags.BLOCK_UPDATE);
-        }
+        } TODO delet after fix */
     }
 
     @Nullable

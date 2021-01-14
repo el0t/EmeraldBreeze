@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "emeraldbreeze:dehydrator"
+      "model": "emeraldbreeze:block/dehydrator"
     }
   }
 }

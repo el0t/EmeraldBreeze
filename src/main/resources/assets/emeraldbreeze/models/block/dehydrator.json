@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "particle": "emeraldbreeze:dehydrator_side",
-    "north": "emeraldbreeze:dehydrator_side",
-    "south": "emeraldbreeze:dehydrator_side",
-    "east": "emeraldbreeze:dehydrator_side",
-    "west": "emeraldbreeze:dehydrator_side",
-    "up": "emeraldbreeze:dehydrator_top",
+    "particle": "emeraldbreeze:blocks/dehydrator_side",
+    "north": "emeraldbreeze:blocks/dehydrator_side",
+    "south": "emeraldbreeze:blocks/dehydrator_side",
+    "east":  "emeraldbreeze:blocks/dehydrator_side",
+    "west":  "emeraldbreeze:blocks/dehydrator_side",
+    "up": "emeraldbreeze:blocks/dehydrator_top",
     "down": "minecraft:block/cobblestone"
   }
 }
