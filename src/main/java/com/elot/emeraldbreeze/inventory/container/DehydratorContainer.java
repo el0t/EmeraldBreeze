@@ -25,8 +25,8 @@ public class DehydratorContainer extends Container {
         this.canInteractWithCallable = IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos());
 
         //Dehydrator inventory
-        int startX = 0;//TODO gui
-        int startY = 0;//  replace values after making gui
+        int startX = 53;
+        int startY = 17;
         int slotSizePlus2 = 18;
         for(int row = 0; row < 3; row++){
             for(int column = 0; column < 4; column++){
@@ -39,23 +39,20 @@ public class DehydratorContainer extends Container {
             }
         }
         //Player inventory
-        int startPlayerY = 0;//TODO replace after making Gui
+        int startPlayerX = 8;
+        int startPlayerY = 84;
         for(int row = 0; row < 3; row++){
             for(int column = 0; column < 9; column++){
                 this.addSlot(new Slot(playerInventory, 9 + (row*9)+column,
-                        startX + (column*slotSizePlus2),
+                        startPlayerX + (column*slotSizePlus2),
                         startPlayerY + (row*slotSizePlus2)));
             }
         }
         //Hotbar inventory
-        int hotbarY = 0;//TODO Make gui
+        int hotbarY = 142;
         for(int column = 0; column < 9; column++){
             this.addSlot(new Slot(playerInventory,column,startX+(column*slotSizePlus2),hotbarY));
         }
-
-
-
-
     }
     public DehydratorContainer(final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {
         this(windowId, playerInventory, getTileEntity(playerInventory, data));
