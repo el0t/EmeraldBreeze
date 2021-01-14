@@ -44,7 +44,5 @@ public class DehydratorScreen extends ContainerScreen<DehydratorContainer> {
         this.font.drawString(matrixStack, this.title.getString(), 8.0f, 6.0f, 4210752);
         this.font.drawString(matrixStack, this.playerInventory.getDisplayName().getString(),
                 8.0f, 72.0f, 4210752);
-        //TODO something is wrong with the Hotbar
-        // and I dont know what it is
     }
 }
