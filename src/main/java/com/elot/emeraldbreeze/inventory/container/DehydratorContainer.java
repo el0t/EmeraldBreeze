@@ -51,7 +51,7 @@ public class DehydratorContainer extends Container {
         //Hotbar inventory
         int hotbarY = 142;
         for(int column = 0; column < 9; column++){
-            this.addSlot(new Slot(playerInventory,column,startX+(column*slotSizePlus2),hotbarY));
+            this.addSlot(new Slot(playerInventory,column,startPlayerX+(column*slotSizePlus2),hotbarY));
         }
     }
     public DehydratorContainer(final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {
