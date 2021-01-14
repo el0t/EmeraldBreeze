@@ -41,7 +41,9 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.extensions.IForgeItemStack;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
@@ -58,7 +60,7 @@ import java.util.stream.Collectors;
 public class DehydratorTileEntity extends LockableLootTileEntity implements ITickableTileEntity, INamedContainerProvider {
     private NonNullList<ItemStack> inventoryContents = NonNullList.withSize(12, ItemStack.EMPTY);
     protected int numPlayersUsing;
-    private ModItemHandler items;
+    private IItemHandlerModifiable items = createHandler();
     private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
     private ITextComponent customName;
     private int[] dryTimes = {0,0,0,0,0,0,0,0,0,0,0,0};
@@ -175,9 +177,13 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
         return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.orEmpty(cap, LazyOptional.of(() -> this.items));
     }
+
     private IItemHandlerModifiable createHandler(){
+
         return new InvWrapper(this);
     }
+
+
     @Override
     public void remove(){
         super.remove();
@@ -189,7 +195,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     //DEHYDRATOR SPECIFIC METHODS
 
     @Override
-    public void tick(){ /*TODO fix
+    public void tick(){
         boolean dirty = false;
         Biome biome = world.getBiome(this.getPos());
         int adjustedDryTime = this.maxDryTime;
@@ -200,7 +206,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
                 if(biome.isHighHumidity()){ adjustedDryTime += 200; }
                 adjustedDryTime = Math.round(adjustedDryTime*(1/biome.getTemperature()));
 
-                for (int index = 0; index < items.getSlots(); index++) {
+                for (int index = 0; index < getSizeInventory(); index++) {
                     if (this.getRecipe(this.items.getStackInSlot(index)) != null) {
                         if (this.dryTimes[index] < adjustedDryTime){
                             this.dryTimes[index] += 1;
@@ -208,12 +214,10 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
                         } else {
                             this.dryTimes[index] = 0;
                             ItemStack output = this.getRecipe(this.items.getStackInSlot(index)).getRecipeOutput();
-                            this.items.decreaseStackSize(index, 1);
+                            this.items.setStackInSlot(index, ItemStack.EMPTY);
                             this.items.insertItem(index, output.copy(), false);
-                            //TODO  this will not work until we make
-                            //      the maximum size of the stack 1 item somehow
-                            // Furthermore, placing a Dehydrator block caused my game to throw a
-                            // "Ticking block entity" NullPointer exception at line 200 :)
+                            //TODO
+                            // Why does this only work for the first slot :*)
                             dirty = true;
                         }
                     }
@@ -224,7 +228,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
             this.markDirty();
             this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(),
                     Constants.BlockFlags.BLOCK_UPDATE);
-        } TODO delet after fix */
+        }
     }
 
     @Nullable

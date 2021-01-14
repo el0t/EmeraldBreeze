@@ -46,7 +46,8 @@ public class ModEventBusSubscriber {
         RenderTypeLookup.setRenderLayer(BlockInit.CORELLIAN_CORN.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.GARLIC_CROP.get(), RenderType.getCutout());
     // Assign tile entity renderer
-        ClientRegistry.bindTileEntityRenderer(DehydratorTileEntity.class, ); //TODO why aren't my jerkys rendering reeee
+        //ClientRegistry.bindTileEntityRenderer(DehydratorTileEntity.class, );
+        // TODO why aren't my jerkys rendering reeee
     // Register Screen factory for interactables
         ScreenManager.registerFactory(ContainerTypeInit.DEHYDRATOR.get(), DehydratorScreen::new);
 
