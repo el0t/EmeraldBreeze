@@ -25,6 +25,7 @@
   "block.emeraldbreeze.garlic": "Garlic Seed",
   "item.emeraldbreeze.garlic_seed": "Garlic Seed",
   "item.emeraldbreeze.garlic": "Garlic",
-  "block.emeraldbreeze.dehydrator": "Dehydrator"
+  "block.emeraldbreeze.dehydrator": "Dehydrator",
+  "container.dehydrator": "Dehydrator"
 
 }

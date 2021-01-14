@@ -2,7 +2,11 @@ package com.elot.emeraldbreeze.util;
 
 import com.elot.emeraldbreeze.EmeraldBreeze;
 import com.elot.emeraldbreeze.blocks.ModCrop;
+import com.elot.emeraldbreeze.client.gui.DehydratorScreen;
 import com.elot.emeraldbreeze.core.init.BlockInit;
+import com.elot.emeraldbreeze.core.init.ContainerTypeInit;
+import com.elot.emeraldbreeze.inventory.container.DehydratorContainer;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
@@ -35,9 +39,12 @@ public class ModEventBusSubscriber {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event){
+    // Apply Render types
         RenderTypeLookup.setRenderLayer(BlockInit.CORELLIAN_CORN.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.GARLIC_CROP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.DEHYDRATOR.get(), RenderType.getCutout());
+    // Register Screen factory for mod Tile entities
+        ScreenManager.registerFactory(ContainerTypeInit.DEHYDRATOR.get(), DehydratorScreen::new);
     }
 
 }
