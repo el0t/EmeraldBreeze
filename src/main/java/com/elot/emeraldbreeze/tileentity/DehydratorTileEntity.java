@@ -32,6 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
@@ -63,8 +64,9 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     private IItemHandlerModifiable items = createHandler();
     private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
     private ITextComponent customName;
+    Biome biome = world.getBiome(this.getPos());
     private int[] dryTimes = {0,0,0,0,0,0,0,0,0,0,0,0};
-    private int maxDryTime = 900;//TODO why does this only cook in slot 1?
+    private int maxDryTime = 300;//TODO why does this only cook in slot 1?
 
     public DehydratorTileEntity(TileEntityType<?> tileEntityTypeIn){
         super(tileEntityTypeIn);
@@ -193,44 +195,42 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     }
 
     //DEHYDRATOR SPECIFIC METHODS
-
+    public int adjustedDryTime(){
+        int x = maxDryTime;
+        float heat = biome.getTemperature();
+        x /= Math.round(heat);
+        if(biome.isHighHumidity()){
+            x+=200;
+        }
+        return x;
+    }
+    private void inventoryChanged() {
+        this.markDirty();
+        this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(),
+                Constants.BlockFlags.BLOCK_UPDATE);
+    }
     @Override
     public void tick(){
         boolean dirty = false;
-        Biome biome = world.getBiome(this.getPos());
-        int adjustedDryTime = this.maxDryTime;
-
         if (this.world != null && !this.world.isRemote){
-            //TODO - will this work for remote worlds?
             if(this.world.getDimensionType().hasSkyLight() && this.world.isDaytime()) {
-                if(biome.isHighHumidity()){ adjustedDryTime += 200; }
-                adjustedDryTime = Math.round(adjustedDryTime*(1/biome.getTemperature()));
 
-                for (int index = 0; index < getSizeInventory(); index++) {
-                    if (this.getRecipe(this.items.getStackInSlot(index)) != null) {
-                        if (this.dryTimes[index] < adjustedDryTime){
-                            this.dryTimes[index] += 1;
-                            dirty = true;
+                for (int i = 0; i < items.getSlots(); i++) {
+                    if (this.getRecipe(this.items.getStackInSlot(i)) != null) {
+                        if (this.dryTimes[i] < adjustedDryTime()){
+                            this.dryTimes[i] += 1;
                         } else {
-                            this.dryTimes[index] = 0;
-                            ItemStack output = this.getRecipe(this.items.getStackInSlot(index)).getRecipeOutput();
-                            this.items.setStackInSlot(index, ItemStack.EMPTY);
-                            this.items.insertItem(index, output.copy(), false);
-                            //TODO
-                            // Why does this only work for the first slot :*)
-                            // Changing the starting index to 2 made all slots after 3rd slot into maps simultaneously
-                            // even if there was no leather present in following slots. First 2 slots unchanged.
-                            dirty = true;
+                            this.dryTimes[i] = 0;
+                            ItemStack output = this.getRecipe(this.items.getStackInSlot(i)).getRecipeOutput();
+                            this.items.setStackInSlot(i, ItemStack.EMPTY);
+                            this.items.insertItem(i, output.copy(), false);
                         }
+                        dirty = true;
                     }
                 }
             }
         }
-        if (dirty) {
-            this.markDirty();
-            this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(),
-                    Constants.BlockFlags.BLOCK_UPDATE);
-        }
+        if (dirty) { inventoryChanged(); }
     }
 
     @Nullable

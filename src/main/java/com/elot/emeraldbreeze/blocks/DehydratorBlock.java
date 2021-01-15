@@ -34,6 +34,11 @@ public class DehydratorBlock extends ContainerBlock {
     public TileEntity createTileEntity(BlockState state, IBlockReader world){
         return TileEntityTypeInit.DEHYDRATOR.get().create();
     }
+    @Nullable
+    @Override
+    public TileEntity createNewTileEntity(IBlockReader worldIn) {
+        return TileEntityTypeInit.DEHYDRATOR.get().create();
+    }
 
     @Override
     public BlockRenderType getRenderType(BlockState state) {
@@ -62,10 +67,5 @@ public class DehydratorBlock extends ContainerBlock {
         }
     }
 
-    //Deprecated
-    @Nullable
-    @Override
-    public TileEntity createNewTileEntity(IBlockReader worldIn) {
-        return TileEntityTypeInit.DEHYDRATOR.get().create();
-    }
+
 }
