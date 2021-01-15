@@ -216,6 +216,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
             if(this.world.getDimensionType().hasSkyLight() && this.world.isDaytime()) {
 
                 for (int i = 0; i < items.getSlots(); i++) {
+
                     if (this.getRecipe(this.items.getStackInSlot(i)) != null) {
                         if (this.dryTimes[i] < adjustedDryTime()){
                             this.dryTimes[i] += 1;
@@ -225,6 +226,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
                             this.items.setStackInSlot(i, ItemStack.EMPTY);
                             this.items.insertItem(i, output.copy(), false);
                         }
+                        //TODO fix tick method
                         dirty = true;
                     }
                 }
