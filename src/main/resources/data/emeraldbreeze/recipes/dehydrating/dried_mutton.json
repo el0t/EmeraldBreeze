@@ -1,0 +1,9 @@
+{
+  "type": "emeraldbreeze:dehydrating",
+  "output": {
+    "item": "emeraldbreeze:dried_mutton"
+  },
+  "input": {
+    "item": "minecraft:mutton"
+  }
+}

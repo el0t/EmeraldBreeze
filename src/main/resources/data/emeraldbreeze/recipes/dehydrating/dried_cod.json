@@ -1,0 +1,9 @@
+{
+  "type": "emeraldbreeze:dehydrating",
+  "output": {
+    "item": "emeraldbreeze:dried_cod"
+  },
+  "input": {
+    "item": "minecraft:cod"
+  }
+}

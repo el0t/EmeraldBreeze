@@ -1,0 +1,9 @@
+{
+  "type": "emeraldbreeze:dehydrating",
+  "output": {
+    "item": "emeraldbreeze:dried_flesh"
+  },
+  "input": {
+    "item": "minecraft:rotten_flesh"
+  }
+}
