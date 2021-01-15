@@ -212,38 +212,58 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     }
 
     @Override
-    public void tick(){
-        boolean dirty = false;
-        if(goodConditions()) {
-            incrementDryTimes();
-            for (int i = 0; i < getSizeInventory(); i++) {
-                ItemStack inputStack = this.items.getStackInSlot(i);
-                if (this.getRecipe(inputStack) !=  null && dryTimes[i] >= adjustedDryTime() )
+    public void tick() {
+
+        if(goodConditions())
+        {
+            for (int i = 0; i < getSizeInventory(); i++)
+            {
+                incrementDryTimes(i);
+                if (checkDried(i))
                 {
-                    ItemStack outputStack = this.getRecipe(inputStack).getRecipeOutput();
-                    dryRoll(0.1, i, inputStack, outputStack);
+                    inventoryChanged();
                 }
             }
-            dirty = true;
-        }
-        if (dirty) {
-            inventoryChanged();
         }
     }
 
-    private void incrementDryTimes(){
-        for(int i = 0; i < getSizeInventory(); i++){
-            if (this.dryTimes[i] < adjustedDryTime()) {
-                this.dryTimes[i] ++ ;
+    private boolean checkDried(int slotNum)
+    {
+        boolean dried = false;
+        ItemStack inputStack = items.getStackInSlot(slotNum);
+
+        if (this.getRecipe(inputStack) != null)
+        {
+            if (dryTimes[slotNum] >= adjustedDryTime())
+            {
+                ItemStack outputStack = this.getRecipe(inputStack).getRecipeOutput();
+
+                if (dryRoll(0.1, slotNum, inputStack, outputStack))
+                {
+                    dried = true;
+                }
             }
         }
+        return dried;
     }
-    private void dryRoll(double rollChance, int slotIndex, ItemStack inputStack, ItemStack outputStack){
-        if(Math.random() <= rollChance){
+
+    private void incrementDryTimes(int slotNum){
+
+        ItemStack inputStack = items.getStackInSlot(slotNum);
+        if (dryTimes[slotNum] < adjustedDryTime() && this.getRecipe(inputStack) != null) {
+            dryTimes[slotNum]++;
+        }
+    }
+    private boolean dryRoll(double rollChance, int slotIndex, ItemStack inputStack, ItemStack outputStack){
+        boolean rollSuccess = false;
+        if(Math.random() <= rollChance)
+        {
             this.items.setStackInSlot(slotIndex, ItemStack.EMPTY);
             this.items.insertItem(slotIndex, outputStack.copy(), false);
             this.dryTimes[slotIndex] = 0;
+            rollSuccess = true;
         }
+        return rollSuccess;
     }
     private void inventoryChanged() {
         this.markDirty();
