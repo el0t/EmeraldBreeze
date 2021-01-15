@@ -2,6 +2,7 @@ package com.elot.emeraldbreeze.blocks;
 
 import com.elot.emeraldbreeze.core.init.TileEntityTypeInit;
 import com.elot.emeraldbreeze.tileentity.DehydratorTileEntity;
+import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ContainerBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -35,6 +36,11 @@ public class DehydratorBlock extends ContainerBlock {
     }
 
     @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
+
+    @Override
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
                                              Hand handIn, BlockRayTraceResult result){
         if(!worldIn.isRemote){
@@ -55,14 +61,6 @@ public class DehydratorBlock extends ContainerBlock {
             }
         }
     }
-    //TODO last.
-    // review goals after finishing Dehydrator TileEntity
-    // and Container including the GUI
-
-
-
-
-
 
     //Deprecated
     @Nullable

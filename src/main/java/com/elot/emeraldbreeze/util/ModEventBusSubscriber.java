@@ -5,19 +5,14 @@ import com.elot.emeraldbreeze.blocks.ModCrop;
 import com.elot.emeraldbreeze.client.gui.DehydratorScreen;
 import com.elot.emeraldbreeze.core.init.BlockInit;
 import com.elot.emeraldbreeze.core.init.ContainerTypeInit;
-import com.elot.emeraldbreeze.tileentity.DehydratorTileEntity;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
-import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -45,9 +40,9 @@ public class ModEventBusSubscriber {
     // Apply Render types
         RenderTypeLookup.setRenderLayer(BlockInit.CORELLIAN_CORN.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.GARLIC_CROP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.DEHYDRATOR.get(), RenderType.getSolid());
     // Assign tile entity renderer
-        //ClientRegistry.bindTileEntityRenderer(DehydratorTileEntity.class, );
-        // TODO why aren't my jerkys rendering reeee
+
     // Register Screen factory for interactables
         ScreenManager.registerFactory(ContainerTypeInit.DEHYDRATOR.get(), DehydratorScreen::new);
 
