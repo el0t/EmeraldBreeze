@@ -55,6 +55,7 @@ import javax.annotation.Nullable;
 import javax.swing.plaf.basic.BasicComboBoxUI;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -212,11 +213,11 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     }
 
     @Override
-    public void tick() {
-
-        if(goodConditions())
+    public void tick()
+    {
+       for (int i = 0; i < getSizeInventory(); i++)
         {
-            for (int i = 0; i < getSizeInventory(); i++)
+            if (goodConditions())
             {
                 incrementDryTimes(i);
                 if (checkDried(i))
@@ -225,18 +226,20 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
                 }
             }
         }
+
     }
+
 
     private boolean checkDried(int slotNum)
     {
         boolean dried = false;
         ItemStack inputStack = items.getStackInSlot(slotNum);
 
-        if (this.getRecipe(inputStack) != null)
+        if (getRecipe(inputStack, slotNum) != null)
         {
             if (dryTimes[slotNum] >= adjustedDryTime())
             {
-                ItemStack outputStack = this.getRecipe(inputStack).getRecipeOutput();
+                ItemStack outputStack = getRecipe(inputStack, slotNum).getRecipeOutput();
 
                 if (dryRoll(0.1, slotNum, inputStack, outputStack))
                 {
@@ -250,17 +253,22 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     private void incrementDryTimes(int slotNum){
 
         ItemStack inputStack = items.getStackInSlot(slotNum);
-        if (dryTimes[slotNum] < adjustedDryTime() && this.getRecipe(inputStack) != null) {
+        if (dryTimes[slotNum] < adjustedDryTime() && getRecipe(inputStack, slotNum) != null)
+        {
             dryTimes[slotNum]++;
+        }
+        else if (inputStack.isEmpty() || getRecipe(inputStack, slotNum) == null)
+        {
+            dryTimes[slotNum] = 0;
         }
     }
     private boolean dryRoll(double rollChance, int slotIndex, ItemStack inputStack, ItemStack outputStack){
         boolean rollSuccess = false;
         if(Math.random() <= rollChance)
         {
-            this.items.setStackInSlot(slotIndex, ItemStack.EMPTY);
-            this.items.insertItem(slotIndex, outputStack.copy(), false);
-            this.dryTimes[slotIndex] = 0;
+            items.setStackInSlot(slotIndex, ItemStack.EMPTY);
+            items.insertItem(slotIndex, outputStack.copy(), false);
+            dryTimes[slotIndex] = 0;
             rollSuccess = true;
         }
         return rollSuccess;
@@ -279,15 +287,22 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
         return false;
     }
     @Nullable
-    private DehydratingRecipe getRecipe(ItemStack stack){
-        if(stack==null){ return null; }
+    private DehydratingRecipe getRecipe(ItemStack stack, int slotNum)
+    {
+        if (stack == null)
+        { return null; }
+
         Set<IRecipe<?>> recipes = findRecipesByType(RecipeSerializerInit.DEHYDRATING, this.world);
-        for(IRecipe<?> iRecipe : recipes){
+        for (IRecipe<?> iRecipe : recipes)
+        {
             DehydratingRecipe recipe = (DehydratingRecipe) iRecipe;
-            if(recipe.matches(new RecipeWrapper(this.items), this.world)){
+
+            if (recipe.Matches(new RecipeWrapper(this.items), this.world, slotNum))
+            {
                 return recipe;
             }
         }
+
         return null;
     }
 

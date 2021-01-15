@@ -30,8 +30,19 @@ public class DehydratingRecipe implements IModRecipe {
     }
 
     @Override
-    public boolean matches(RecipeWrapper inv, World worldIn) {
-        if (this.input.test(inv.getStackInSlot(0))) {
+    public boolean matches(RecipeWrapper inv, World worldIn)
+    {
+        if (this.input.test(inv.getStackInSlot(0)))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean Matches(RecipeWrapper inv, World worldIn, int slotNum)  // Allows for iteration through dehyd slots
+    {
+        if (this.input.test(inv.getStackInSlot(slotNum)))
+        {
             return true;
         }
         return false;
