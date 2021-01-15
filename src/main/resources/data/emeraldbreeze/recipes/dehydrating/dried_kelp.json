@@ -1,9 +1,9 @@
 {
   "type": "emeraldbreeze:dehydrating",
   "output": {
-    "item": "minecraft:kelp"
+    "item": "minecraft:dried_kelp"
   },
   "input": {
-    "item": "minecraft:dried_kelp"
+    "item": "minecraft:kelp"
   }
 }
