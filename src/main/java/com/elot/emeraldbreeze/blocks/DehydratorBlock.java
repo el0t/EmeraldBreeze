@@ -55,7 +55,7 @@ public class DehydratorBlock extends ContainerBlock {
                 return ActionResultType.SUCCESS;
             }
         }
-        return ActionResultType.FAIL;
+        return ActionResultType.CONSUME;
     }
     @Override
     public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving){
