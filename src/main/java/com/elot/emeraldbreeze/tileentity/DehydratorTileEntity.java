@@ -65,8 +65,8 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
     private ITextComponent customName;
     Biome biome = world.getBiome(this.getPos());
-    private int[] dryTimes = {0,0,0,0,0,0,0,0,0,0,0,0};
-    private int maxDryTime = 300;//TODO why does this only cook in slot 1?
+    private int[] dryTimes = new int[getSizeInventory()];
+    private int maxDryTime = 300;
 
     public DehydratorTileEntity(TileEntityType<?> tileEntityTypeIn){
         super(tileEntityTypeIn);
@@ -204,37 +204,44 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
         }
         return x;
     }
+
+    @Override
+    public void tick(){
+        boolean dirty = false;
+        if(goodConditions()) {
+            for (int i = 0; i < items.getSlots(); i++) {
+                ItemStack itemStack = this.items.getStackInSlot(i);
+                if (this.getRecipe(itemStack) != null) {
+                    if (this.dryTimes[i] < adjustedDryTime()) {
+                        this.dryTimes[i] ++ ;
+                    } else {
+                        this.dryTimes[i] = 0;
+                        ItemStack output = this.getRecipe(this.items.getStackInSlot(i)).getRecipeOutput();
+                        this.items.setStackInSlot(i, ItemStack.EMPTY);
+                        this.items.insertItem(i, output.copy(), false);
+                    }
+                    dirty = true;
+                }
+            }
+            if (dirty) {
+                inventoryChanged();
+            }
+        }
+    }
+
     private void inventoryChanged() {
         this.markDirty();
         this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(),
                 Constants.BlockFlags.BLOCK_UPDATE);
     }
-    @Override
-    public void tick(){
-        boolean dirty = false;
+    public boolean goodConditions(){
         if (this.world != null && !this.world.isRemote){
-            if(this.world.getDimensionType().hasSkyLight() && this.world.isDaytime()) {
-
-                for (int i = 0; i < items.getSlots(); i++) {
-
-                    if (this.getRecipe(this.items.getStackInSlot(i)) != null) {
-                        if (this.dryTimes[i] < adjustedDryTime()){
-                            this.dryTimes[i] += 1;
-                        } else {
-                            this.dryTimes[i] = 0;
-                            ItemStack output = this.getRecipe(this.items.getStackInSlot(i)).getRecipeOutput();
-                            this.items.setStackInSlot(i, ItemStack.EMPTY);
-                            this.items.insertItem(i, output.copy(), false);
-                        }
-                        //TODO fix tick method
-                        dirty = true;
-                    }
-                }
+            if(this.world.getDimensionType().hasSkyLight() && this.world.isDaytime()){
+                return true;
             }
         }
-        if (dirty) { inventoryChanged(); }
+        return false;
     }
-
     @Nullable
     private DehydratingRecipe getRecipe(ItemStack stack){
         if(stack==null){ return null; }
