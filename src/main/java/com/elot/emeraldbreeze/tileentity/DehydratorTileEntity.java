@@ -64,7 +64,6 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     private IItemHandlerModifiable items = createHandler();
     private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
     private ITextComponent customName;
-    Biome biome = world.getBiome(this.getPos());
     private int[] dryTimes = new int[getSizeInventory()];
     private int maxDryTime = 300;
 
@@ -108,6 +107,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
         if(!this.checkLootAndWrite(compoundNBT)){
             ItemStackHelper.saveAllItems(compoundNBT, this.inventoryContents);
         }
+        compoundNBT.putIntArray("DryTimes", this.dryTimes);
         return compoundNBT;
     }
     @Override
@@ -117,6 +117,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
         if(!this.checkLootAndRead(compoundNBT)){
             ItemStackHelper.loadAllItems(compoundNBT, this.inventoryContents);
         }
+        this.dryTimes = compoundNBT.getIntArray("DryTimes");
     }
     @Override
     public boolean receiveClientEvent(int id, int type){
@@ -194,13 +195,18 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
         }
     }
 
+
     //DEHYDRATOR SPECIFIC METHODS
-    public int adjustedDryTime(){
+
+    public int adjustedDryTime() {
         int x = maxDryTime;
-        float heat = biome.getTemperature();
-        x /= Math.round(heat);
-        if(biome.isHighHumidity()){
-            x+=200;
+        if (this.world != null && !this.world.isRemote) {
+            Biome biome = world.getBiome(this.getPos());
+            float heat = biome.getTemperature();
+            x /= Math.round(heat);
+            if (biome.isHighHumidity()) {
+                x += 200;
+            }
         }
         return x;
     }
@@ -209,26 +215,36 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     public void tick(){
         boolean dirty = false;
         if(goodConditions()) {
-            for (int i = 0; i < items.getSlots(); i++) {
-                ItemStack itemStack = this.items.getStackInSlot(i);
-                if (this.getRecipe(itemStack) != null) {
-                    if (this.dryTimes[i] < adjustedDryTime()) {
-                        this.dryTimes[i] ++ ;
-                    } else {
-                        this.dryTimes[i] = 0;
-                        ItemStack output = this.getRecipe(this.items.getStackInSlot(i)).getRecipeOutput();
-                        this.items.setStackInSlot(i, ItemStack.EMPTY);
-                        this.items.insertItem(i, output.copy(), false);
-                    }
-                    dirty = true;
+            incrementDryTimes();
+            for (int i = 0; i < getSizeInventory(); i++) {
+                ItemStack inputStack = this.items.getStackInSlot(i);
+                if (this.getRecipe(inputStack) !=  null && dryTimes[i] >= adjustedDryTime() )
+                {
+                    ItemStack outputStack = this.getRecipe(inputStack).getRecipeOutput();
+                    dryRoll(0.1, i, inputStack, outputStack);
                 }
             }
-            if (dirty) {
-                inventoryChanged();
-            }
+            dirty = true;
+        }
+        if (dirty) {
+            inventoryChanged();
         }
     }
 
+    private void incrementDryTimes(){
+        for(int i = 0; i < getSizeInventory(); i++){
+            if (this.dryTimes[i] < adjustedDryTime()) {
+                this.dryTimes[i] ++ ;
+            }
+        }
+    }
+    private void dryRoll(double rollChance, int slotIndex, ItemStack inputStack, ItemStack outputStack){
+        if(Math.random() <= rollChance){
+            this.items.setStackInSlot(slotIndex, ItemStack.EMPTY);
+            this.items.insertItem(slotIndex, outputStack.copy(), false);
+            this.dryTimes[slotIndex] = 0;
+        }
+    }
     private void inventoryChanged() {
         this.markDirty();
         this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(),
