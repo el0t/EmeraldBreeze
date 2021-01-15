@@ -26,6 +26,14 @@
   "item.emeraldbreeze.garlic_seed": "Garlic Seed",
   "item.emeraldbreeze.garlic": "Garlic",
   "block.emeraldbreeze.dehydrator": "Dehydrator",
-  "container.emeraldbreeze.dehydrator": "Dehydrator"
+  "container.emeraldbreeze.dehydrator": "Dehydrator",
+  "item.emeraldbreeze.dried_beef": "Beef Jerky",
+  "item.emeraldbreeze.dried_pork": "Pork Jerky",
+  "item.emeraldbreeze.dried_chicken": "Chicken Jerky",
+  "item.emeraldbreeze.dried_cod": "Cod Jerky",
+  "item.emeraldbreeze.dried_salmon": "Salmon Jerky",
+  "item.emeraldbreeze.dried_mutton": "Mutton Jerky",
+  "item.emeraldbreeze.dried_rabbit": "Rabbit Jerky",
+  "item.emeraldbreeze.dried_flesh": "Zombie Jerky"
 
 }
