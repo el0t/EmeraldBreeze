@@ -33,23 +33,14 @@ public class ItemInit {
     public static final RegistryObject<Item> CORELLIAN_CORNCOB = ITEMS.register("corellian_corncob", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> GARLIC = ITEMS.register("garlic", () -> new Item(new Item.Properties().food(ModFoods.GARLIC).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> POPCORN = ITEMS.register("popcorn", () -> new Item(new Item.Properties().food(ModFoods.POPCORN).group(EmeraldBreeze.TAB)));
-    //TODO jerky items - need assets, data, textures
-    public static final RegistryObject<Item> DRIED_BEEF = ITEMS.register("dried_beef",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_MEAT).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> DRIED_PORK = ITEMS.register("dried_pork",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_MEAT).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> DRIED_CHICKEN = ITEMS.register("dried_chicken",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_CHICKEN).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> DRIED_COD = ITEMS.register("dried_cod",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> DRIED_SALMON = ITEMS.register("dried_salmon",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_CHICKEN).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> DRIED_MUTTON = ITEMS.register("dried_mutton",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_CHICKEN).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> DRIED_RABBIT = ITEMS.register("dried_rabbit",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> DRIED_FLESH = ITEMS.register("dried_flesh",
-            () -> new Item(new Item.Properties().food(ModFoods.DRIED_FLESH).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_BEEF = ITEMS.register("dried_beef", () -> new Item(new Item.Properties().food(ModFoods.DRIED_MEAT).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_PORK = ITEMS.register("dried_pork", () -> new Item(new Item.Properties().food(ModFoods.DRIED_MEAT).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_CHICKEN = ITEMS.register("dried_chicken", () -> new Item(new Item.Properties().food(ModFoods.DRIED_CHICKEN).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_COD = ITEMS.register("dried_cod", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_SALMON = ITEMS.register("dried_salmon", () -> new Item(new Item.Properties().food(ModFoods.DRIED_CHICKEN).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_MUTTON = ITEMS.register("dried_mutton", () -> new Item(new Item.Properties().food(ModFoods.DRIED_CHICKEN).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_RABBIT = ITEMS.register("dried_rabbit", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> DRIED_FLESH = ITEMS.register("dried_flesh", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FLESH).group(EmeraldBreeze.TAB)));
 
 
 
