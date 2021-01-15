@@ -65,7 +65,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
     private ITextComponent customName;
     private int[] dryTimes = new int[getSizeInventory()];
-    private int maxDryTime = 300;
+    private int maxDryTime = 1200;
 
     public DehydratorTileEntity(TileEntityType<?> tileEntityTypeIn){
         super(tileEntityTypeIn);
