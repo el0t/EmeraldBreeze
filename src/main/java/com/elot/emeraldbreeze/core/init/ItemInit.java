@@ -41,7 +41,6 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIED_MUTTON = ITEMS.register("dried_mutton", () -> new Item(new Item.Properties().food(ModFoods.DRIED_CHICKEN).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> DRIED_RABBIT = ITEMS.register("dried_rabbit", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> DRIED_FLESH = ITEMS.register("dried_flesh", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FLESH).group(EmeraldBreeze.TAB)));
-    //TODO add new textures for dried_chicken, dried_mutton, dried_rabbit
 
     //TODO add Dried plants
 
