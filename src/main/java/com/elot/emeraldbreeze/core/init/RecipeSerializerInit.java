@@ -20,8 +20,8 @@ public class RecipeSerializerInit {
 
     public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, EmeraldBreeze.MOD_ID);
 
-    public static final RegistryObject<IRecipeSerializer<?>> MOD_SERIALIZER = RECIPE_SERIALIZERS.register("dehydrating",
-            () -> DEHYDRATING_RECIPE_SERIALIZER);
+    public static final RegistryObject<IRecipeSerializer<?>> MOD_SERIALIZER = RECIPE_SERIALIZERS.register(
+            "dehydrating", () -> DEHYDRATING_RECIPE_SERIALIZER);
 
     private static class RecipeType<T extends IRecipe<?>> implements IRecipeType<T> {
         @Override

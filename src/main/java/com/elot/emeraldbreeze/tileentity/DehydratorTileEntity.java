@@ -241,7 +241,7 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
             {
                 ItemStack outputStack = getRecipe(inputStack, slotNum).getRecipeOutput();
 
-                if (dryRoll(0.1, slotNum, inputStack, outputStack))
+                if (dryRoll(0.0049019607843137, slotNum, outputStack))
                 {
                     dried = true;
                 }
@@ -262,9 +262,9 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
             dryTimes[slotNum] = 0;
         }
     }
-    private boolean dryRoll(double rollChance, int slotIndex, ItemStack inputStack, ItemStack outputStack){
+    private boolean dryRoll(double rollChance, int slotIndex, ItemStack outputStack){
         boolean rollSuccess = false;
-        if(Math.random() <= rollChance)
+        if(Math.random() <= rollChance) // This method is called above using chance (1/204)
         {
             items.setStackInSlot(slotIndex, ItemStack.EMPTY);
             items.insertItem(slotIndex, outputStack.copy(), false);

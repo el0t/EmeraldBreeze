@@ -47,7 +47,6 @@ public class DehydratingRecipe implements IModRecipe {
         }
         return false;
     }
-
     @Override
     public ItemStack getCraftingResult(RecipeWrapper inv) {
         return this.output;
