@@ -281,6 +281,8 @@ public class DehydratorTileEntity extends LockableLootTileEntity implements ITic
     public boolean goodConditions(){
         if (this.world != null && !this.world.isRemote){
             if(this.world.getDimensionType().hasSkyLight() && this.world.isDaytime()){
+                //TODO move this method into the Block class to set it as a BlockState
+                // Because it also should not work indoors
                 return true;
             }
         }
