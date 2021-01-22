@@ -9,6 +9,16 @@
   "item.emeraldbreeze.mithril_ingot": "Mithril Ingot",
   "block.emeraldbreeze.mithril_ore": "Mithril Ore",
   "block.emeraldbreeze.mithril_block": "Block of Mithril",
+  "block.emeraldbreeze.kodur_ore": "Kodur Ore",
+  "block.emeraldbreeze.kodur_block": "Block of Kodur",
+  "item.emeraldbreeze.kodur_ingot": "Kodur Ingot",
+  "block.emeraldbreeze.tolmanite_ore": "Tolmanite Ore",
+  "block.emeraldbreeze.tolmanite_block": "Block of Tolmanite",
+  "item.emeraldbreeze.tolmanite_ingot": "Tolmanite Ingot",
+  "block.emeraldbreeze.simion_ore": "Simion Ore",
+
+  "block.emeraldbreeze.esmanite_ore": "Esmanite Ore",
+
   "item.emeraldbreeze.mithril_pickaxe": "Mithril Pickaxe",
   "item.emeraldbreeze.mithril_axe": "Mithril Axe",
   "item.emeraldbreeze.mithril_hoe": "Mithril Hoe",
