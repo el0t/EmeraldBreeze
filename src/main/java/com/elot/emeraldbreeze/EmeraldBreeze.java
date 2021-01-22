@@ -1,7 +1,6 @@
 package com.elot.emeraldbreeze;
 
-import com.elot.emeraldbreeze.core.init.BlockInit;
-import com.elot.emeraldbreeze.core.init.ItemInit;
+import com.elot.emeraldbreeze.core.init.*;
 import com.elot.emeraldbreeze.world.gen.ModOreGen;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -28,6 +27,11 @@ public class EmeraldBreeze
 
         ItemInit.ITEMS.register(bus);
         BlockInit.BLOCKS.register(bus);
+        TileEntityTypeInit.TILE_ENTITY_TYPES.register(bus);
+        ContainerTypeInit.CONTAINER_TYPES.register(bus);
+
+
+        RecipeSerializerInit.RECIPE_SERIALIZERS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
