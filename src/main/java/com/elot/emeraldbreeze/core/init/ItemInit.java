@@ -52,6 +52,8 @@ public class ItemInit {
 
     //TODO cursebreaker item
 
+    //TODO add kodur ring
+
     //TODO add Dried plants
 
 
