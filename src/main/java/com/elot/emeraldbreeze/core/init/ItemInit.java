@@ -19,6 +19,12 @@ public class ItemInit {
     public static final RegistryObject<Item> ONYX = ITEMS.register("onyx", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> MITHRIL_INGOT = ITEMS.register("mithril_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
+    //TODO assets, data for the tolmanite and kodur ingots
+    public static final RegistryObject<Item> KODUR_INGOT = ITEMS.register("kodur_ingot", ()-> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> TOLMANITE_INGOT = ITEMS.register("tolmanite_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
+    //TODO add output for esmanite and simion mining
+
+    //TODO add tolmanite armor and weapons
     public static final RegistryObject<Item> MITHRIL_SWORD = ITEMS.register("mithril_sword", () -> new SwordItem(ModItemTier.MITHRIL, 3, -2.4F, new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> MITHRIL_PICKAXE = ITEMS.register("mithril_pickaxe", () -> new PickaxeItem(ModItemTier.MITHRIL, 1, -2.8F, new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> MITHRIL_SHOVEL = ITEMS.register("mithril_shovel", () -> new ShovelItem(ModItemTier.MITHRIL, 1.5F, -3.0F, new Item.Properties().group(EmeraldBreeze.TAB)));
@@ -42,7 +48,12 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIED_RABBIT = ITEMS.register("dried_rabbit", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> DRIED_FLESH = ITEMS.register("dried_flesh", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FLESH).group(EmeraldBreeze.TAB)));
 
+    //TODO add silver dagger, silver arrows
+
+    //TODO cursebreaker item
+
     //TODO add Dried plants
+
 
 
 }
