@@ -54,6 +54,8 @@ public class ItemInit {
 
     //TODO add kodur ring
 
+    //TODO update CrystalBallItem as desired
+
     //TODO add Dried plants
 
 
