@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "emeraldbreeze:tolmanite_ore"
+  },
+  "result": "emeraldbreeze:tolmanite_ingot",
+  "experience": 0.9,
+  "cookingtime": 400
+}

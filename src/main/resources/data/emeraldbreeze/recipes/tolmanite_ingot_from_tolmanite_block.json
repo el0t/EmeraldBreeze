@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "emeraldbreeze:tolmanite_ingot",
+  "ingredients": [
+    {
+      "item": "emeraldbreeze:tolmanite_block"
+    }
+  ],
+  "result": {
+    "item": "emeraldbreeze:tolmanite_ingot",
+    "count": 9
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "emeraldbreeze:kodur_ore"
+  },
+  "result": "emeraldbreeze:kodur_ingot",
+  "experience": 0.2,
+  "cookingtime": 200
+}
