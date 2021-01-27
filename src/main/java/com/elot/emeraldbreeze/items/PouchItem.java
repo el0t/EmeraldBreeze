@@ -15,7 +15,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-import javax.annotation.Nonnull;
 
 public class PouchItem extends Item {
 
@@ -41,7 +40,7 @@ public class PouchItem extends Item {
     public int getItemStackLimit(ItemStack stack) { return 1; }
     @Override
     public int getUseDuration(ItemStack stack) { return 2; }
-    @Nonnull
+
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         if(!worldIn.isRemote()){
