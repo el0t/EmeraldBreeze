@@ -44,12 +44,9 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIED_RABBIT = ITEMS.register("dried_rabbit", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> DRIED_FLESH = ITEMS.register("dried_flesh", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FLESH).group(EmeraldBreeze.TAB)));
 
-    //TODO add silver dagger, silver arrows
-
-    //TODO add pouch
+    //TODO add pouch assets, data
     public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> new PouchItem(new Item.Properties().maxStackSize(1).group(EmeraldBreeze.POU)));
 
-    //TODO cursebreaker item
 
     //TODO add kodur ring
 
@@ -59,6 +56,7 @@ public class ItemInit {
 
     //TODO add Blasting recipes for ALL mod ores??
 
-
+    //TODO add silver dagger, silver arrows
+    //TODO cursebreaker item
 
 }
