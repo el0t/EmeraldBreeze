@@ -19,7 +19,7 @@ public class PouchContainer extends Container {
 
     public PouchContainer(int id, PlayerInventory playerInventory){
         super(ContainerTypeInit.POUCH.get(), id);
-        this.item = getHeldItem(playerInventory.player);
+        this.item = getHeldPouch(playerInventory.player);
         this.itemHandler = ((PouchItem)this.item.getItem()).getInventory(this.item);
 
         //TODO create container
@@ -89,12 +89,6 @@ public class PouchContainer extends Container {
         super.onContainerClosed(playerIn);
         ((PouchItem) this.item.getItem()).saveInventory(this.item, this.itemHandler);
     }
-
-    private static ItemStack getHeldItem(PlayerEntity playerEntity){
-        if(isPouchItem(playerEntity.getHeldItemMainhand())){ return playerEntity.getHeldItemMainhand(); }
-        if(isPouchItem(playerEntity.getHeldItemOffhand())){ return playerEntity.getHeldItemOffhand(); }
-        return ItemStack.EMPTY;
-    }
     public boolean canTake(int slotId, Slot slot, int dragType, PlayerEntity playerEntity, ClickType clickType){
         if (slotId == blockedSlot || slotId <= itemHandler.getSlots()-1
                 && isPouchItem(playerEntity.inventory.getItemStack())){ return false; }
@@ -110,5 +104,11 @@ public class PouchContainer extends Container {
     }
     private static boolean isPouchItem(ItemStack stack){
         return stack.getItem() instanceof PouchItem;
+    }
+    private static ItemStack getHeldPouch(PlayerEntity playerEntity){
+        if(isPouchItem(playerEntity.getHeldItemMainhand())){ return playerEntity.getHeldItemMainhand(); }
+        if(isPouchItem(playerEntity.getHeldItemOffhand())){ return playerEntity.getHeldItemOffhand(); }
+        return ItemStack.EMPTY;
+        //Main hand should take priority, if 2 pouches are held
     }
 }
