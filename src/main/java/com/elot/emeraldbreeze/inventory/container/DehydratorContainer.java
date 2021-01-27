@@ -30,11 +30,10 @@ public class DehydratorContainer extends Container {
         int slotSizePlus2 = 18;
         for(int row = 0; row < 3; row++){
             for(int column = 0; column < 4; column++){
-                this.addSlot(new Slot(tileEntity, (row*4)+column, //Genius maths from turty for the index
+                this.addSlot(new Slot(tileEntity, (row*4)+column, //Genius maths from turty
                         startX + (column*slotSizePlus2),
                         startY + (row*slotSizePlus2)){
                     public int getSlotStackLimit(){ return 1; }
-                    // this should set the maximum pieces of jerky to 1 per slot
                 });
             }
         }

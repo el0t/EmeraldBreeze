@@ -2,10 +2,7 @@ package com.elot.emeraldbreeze.core.init;
 
 import com.elot.emeraldbreeze.EmeraldBreeze;
 
-import com.elot.emeraldbreeze.items.ModArmorMaterial;
-import com.elot.emeraldbreeze.items.ModFoods;
-import com.elot.emeraldbreeze.items.ModItemTier;
-import com.elot.emeraldbreeze.items.InventoryItem;
+import com.elot.emeraldbreeze.items.*;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
@@ -50,7 +47,7 @@ public class ItemInit {
     //TODO add silver dagger, silver arrows
 
     //TODO add pouch
-    // public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> );
+    public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> new PouchItem(new Item.Properties().maxStackSize(1).group(EmeraldBreeze.POU)));
 
     //TODO cursebreaker item
 

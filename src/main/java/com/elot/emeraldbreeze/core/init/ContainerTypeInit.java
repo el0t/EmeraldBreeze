@@ -18,6 +18,5 @@ public class ContainerTypeInit {
             register("dehydrator", () -> IForgeContainerType.create(DehydratorContainer::new));
     public static final RegistryObject<ContainerType<PouchContainer>> POUCH = CONTAINER_TYPES.
             register("pouch", () -> IForgeContainerType.create(PouchContainer::new));
-            //TODO needs appropraite contstructor in PouchContainer class
 
 }

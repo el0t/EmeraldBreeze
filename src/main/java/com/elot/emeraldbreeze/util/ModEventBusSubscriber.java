@@ -3,6 +3,7 @@ package com.elot.emeraldbreeze.util;
 import com.elot.emeraldbreeze.EmeraldBreeze;
 import com.elot.emeraldbreeze.blocks.ModCrop;
 import com.elot.emeraldbreeze.client.gui.DehydratorScreen;
+import com.elot.emeraldbreeze.client.gui.PouchScreen;
 import com.elot.emeraldbreeze.core.init.BlockInit;
 import com.elot.emeraldbreeze.core.init.ContainerTypeInit;
 import net.minecraft.client.gui.ScreenManager;
@@ -45,6 +46,7 @@ public class ModEventBusSubscriber {
 
     // Register Screen factory for interactables
         ScreenManager.registerFactory(ContainerTypeInit.DEHYDRATOR.get(), DehydratorScreen::new);
+        ScreenManager.registerFactory(ContainerTypeInit.POUCH.get(), PouchScreen::new);
 
     }
 

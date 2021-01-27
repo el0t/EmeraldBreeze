@@ -33,6 +33,8 @@ public class InventoryItem extends Item implements IInventory {
     @Override
     public int getSizeInventory() { return inventorySize; }
 
+    public static void setInventorySize(int inventorySize) { InventoryItem.inventorySize = inventorySize; }
+
     @Override
     public boolean isEmpty() { return itemHandler.isEmpty(); }
 
