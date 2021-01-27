@@ -5,12 +5,12 @@ import com.elot.emeraldbreeze.EmeraldBreeze;
 import com.elot.emeraldbreeze.items.ModArmorMaterial;
 import com.elot.emeraldbreeze.items.ModFoods;
 import com.elot.emeraldbreeze.items.ModItemTier;
+import com.elot.emeraldbreeze.items.InventoryItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.lwjgl.system.CallbackI;
 
 public class ItemInit {
 
@@ -48,6 +48,9 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIED_FLESH = ITEMS.register("dried_flesh", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FLESH).group(EmeraldBreeze.TAB)));
 
     //TODO add silver dagger, silver arrows
+
+    //TODO add pouch
+    // public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> );
 
     //TODO cursebreaker item
 

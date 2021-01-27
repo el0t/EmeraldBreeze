@@ -1,5 +1,6 @@
 {
   "itemGroup.eb1": "EmeraldBreeze",
+  "itemGroup.eb2": "EB Pouches",
   "item.emeraldbreeze.onyx": "Onyx",
   "block.emeraldbreeze.onyx_ore": "Onyx Ore",
   "block.emeraldbreeze.onyx_block": "Block of Onyx",
@@ -17,7 +18,7 @@
   "item.emeraldbreeze.tolmanite_ingot": "Tolmanite Ingot",
   "block.emeraldbreeze.simion_ore": "Simion Ore",
 
-  "block.emeraldbreeze.esmanite_ore": "Esmanite Ore",
+  "block.emeraldbreeze.esmanite_ore": "Skylit Ore",
 
   "item.emeraldbreeze.mithril_pickaxe": "Mithril Pickaxe",
   "item.emeraldbreeze.mithril_axe": "Mithril Axe",

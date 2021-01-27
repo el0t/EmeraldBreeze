@@ -52,5 +52,8 @@ public class EmeraldBreeze
         public ItemStack createIcon() {
             return new ItemStack(ItemInit.ONYX.get());
         }};
+    public static final ItemGroup POU = new ItemGroup("eb2") {
+        @Override
+        public ItemStack createIcon() { return new ItemStack(ItemInit.POUCH.get()); }};
 
 }
