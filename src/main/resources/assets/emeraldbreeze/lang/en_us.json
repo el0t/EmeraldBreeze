@@ -45,6 +45,8 @@
   "item.emeraldbreeze.dried_salmon": "Salmon Jerky",
   "item.emeraldbreeze.dried_mutton": "Mutton Jerky",
   "item.emeraldbreeze.dried_rabbit": "Rabbit Jerky",
-  "item.emeraldbreeze.dried_flesh": "Zombie Jerky"
+  "item.emeraldbreeze.dried_flesh": "Zombie Jerky",
+  "item.emeraldbreeze.pouch": "Pouch",
+  "container.emeraldbreeze.pouch": "Pouch"
 
 }
