@@ -47,7 +47,6 @@ public class ItemInit {
     //TODO add pouch assets, data
     public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> new PouchItem(new Item.Properties().maxStackSize(1).group(EmeraldBreeze.POU)));
 
-
     //TODO add kodur ring
 
     //TODO update CrystalBallItem as desired
