@@ -33,7 +33,7 @@ public class ItemInit {
     public static final RegistryObject<Item> JUTE_SEED = ITEMS.register("jute_seed", () -> new BlockItem(BlockInit.JUTE.get(),(new Item.Properties()).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> GARLIC_SEED = ITEMS.register("garlic_seed", () -> new BlockItem(BlockInit.GARLIC_CROP.get(), (new Item.Properties().group(EmeraldBreeze.TAB))));
 
-    //TODO Jute items, assets, data, textures
+    //TODO Jute items textures
     public static final RegistryObject<Item> JUTE_STALKS = ITEMS.register("jute_stalks", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> JUTE_FIBER = ITEMS.register("jute_fiber", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> BURLAP = ITEMS.register("burlap", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
@@ -49,7 +49,7 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIED_RABBIT = ITEMS.register("dried_rabbit", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FISH).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> DRIED_FLESH = ITEMS.register("dried_flesh", () -> new Item(new Item.Properties().food(ModFoods.DRIED_FLESH).group(EmeraldBreeze.TAB)));
 
-    //TODO add pouch assets, data
+    //TODO add pouch data
     public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> new PouchItem(new Item.Properties().maxStackSize(1).group(EmeraldBreeze.POU)));
 
     //TODO add kodur ring
