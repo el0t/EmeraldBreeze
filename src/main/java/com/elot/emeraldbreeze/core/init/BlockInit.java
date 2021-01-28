@@ -28,6 +28,7 @@ public class BlockInit {
     public static final RegistryObject<Block> KODUR_ORE = BLOCKS.register("kodur_ore", () -> new ModOreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(4.0f, 2.0f).harvestTool(ToolType.PICKAXE).harvestLevel(1).sound(SoundType.STONE)));
     public static final RegistryObject<Block> TOLMANITE_ORE = BLOCKS.register("tolmanite_ore", () -> new ModOreBlock(AbstractBlock.Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(8.0f, 10.0f).harvestTool(ToolType.PICKAXE).harvestLevel(1).sound(SoundType.STONE)));
     public static final RegistryObject<Block> ESMANITE_ORE = BLOCKS.register("esmanite_ore", () -> new ModOreBlock(AbstractBlock.Properties.from(Blocks.END_STONE)));
+    //todo overworld void cx @bedrock
     public static final RegistryObject<Block> SIMION_ORE = BLOCKS.register("simion_ore", () -> new ModOreBlock(AbstractBlock.Properties.from(Blocks.END_STONE)));
     public static final RegistryObject<Block> JUTE = BLOCKS.register("jute", () -> new ModCrop(AbstractBlock.Properties.from(Blocks.WHEAT)));
     public static final RegistryObject<Block> GARLIC_CROP = BLOCKS.register("garlic", () -> new ModCrop(AbstractBlock.Properties.from(Blocks.POTATOES)));
