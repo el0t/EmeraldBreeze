@@ -2,6 +2,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "emeraldbreeze:items/corellian_corncob"
+    "layer0": "emeraldbreeze:items/jute_stalks"
   }
 }

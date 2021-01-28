@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "emeraldbreeze:blocks/jute_stage5"
+  }
+}

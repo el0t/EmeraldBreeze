@@ -1,0 +1,9 @@
+{
+  "type": "emeraldbreeze:dehydrating",
+  "output": {
+    "item": "emeraldbreeze:jute_fiber"
+  },
+  "input": {
+    "item": "emeraldbreeze:jute_stalks"
+  }
+}

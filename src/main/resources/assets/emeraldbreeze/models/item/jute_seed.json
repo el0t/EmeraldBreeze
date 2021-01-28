@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "emeraldbreeze:items/corellian_seed"
+    "layer0": "emeraldbreeze:items/jute_seed"
   }
 }

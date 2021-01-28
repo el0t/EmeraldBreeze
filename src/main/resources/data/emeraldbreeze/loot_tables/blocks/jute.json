@@ -12,17 +12,17 @@
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "emeraldbreeze:corellian_corn",
+                  "block": "emeraldbreeze:jute",
                   "properties": {
                     "age": "7"
                   }
                 }
               ],
-              "name": "emeraldbreeze:corellian_corncob"
+              "name": "emeraldbreeze:jute_stalks"
             },
             {
               "type": "minecraft:item",
-              "name": "emeraldbreeze:corellian_seed"
+              "name": "emeraldbreeze:jute_seed"
             }
           ]
         }
@@ -44,13 +44,13 @@
               }
             }
           ],
-          "name": "emeraldbreeze:corellian_seed"
+          "name": "emeraldbreeze:jute_seed"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "emeraldbreeze:corellian_corn",
+          "block": "emeraldbreeze:jute_stalks",
           "properties": {
             "age": "7"
           }

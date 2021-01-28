@@ -30,9 +30,14 @@ public class ItemInit {
     public static final RegistryObject<Item> MITHRIL_CHESTPLATE = ITEMS.register("mithril_chestplate", () -> new ArmorItem(ModArmorMaterial.MITHRIL, EquipmentSlotType.CHEST, (new Item.Properties()).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> MITHRIL_LEGGINGS = ITEMS.register("mithril_leggings", () -> new ArmorItem(ModArmorMaterial.MITHRIL, EquipmentSlotType.LEGS, (new Item.Properties()).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> MITHRIL_BOOTS = ITEMS.register("mithril_boots", () -> new ArmorItem(ModArmorMaterial.MITHRIL, EquipmentSlotType.FEET, (new Item.Properties()).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> CORELLIAN_SEED = ITEMS.register("corellian_seed", () -> new BlockItem(BlockInit.CORELLIAN_CORN.get(),(new Item.Properties()).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> JUTE_SEED = ITEMS.register("jute_seed", () -> new BlockItem(BlockInit.JUTE.get(),(new Item.Properties()).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> GARLIC_SEED = ITEMS.register("garlic_seed", () -> new BlockItem(BlockInit.GARLIC_CROP.get(), (new Item.Properties().group(EmeraldBreeze.TAB))));
-    public static final RegistryObject<Item> CORELLIAN_CORNCOB = ITEMS.register("corellian_corncob", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
+
+    //TODO Jute items, assets, data, textures
+    public static final RegistryObject<Item> JUTE_STALKS = ITEMS.register("jute_stalks", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> JUTE_FIBER = ITEMS.register("jute_fiber", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> BURLAP = ITEMS.register("burlap", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
+
     public static final RegistryObject<Item> GARLIC = ITEMS.register("garlic", () -> new Item(new Item.Properties().food(ModFoods.GARLIC).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> POPCORN = ITEMS.register("popcorn", () -> new Item(new Item.Properties().food(ModFoods.POPCORN).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> DRIED_BEEF = ITEMS.register("dried_beef", () -> new Item(new Item.Properties().food(ModFoods.DRIED_MEAT).group(EmeraldBreeze.TAB)));
@@ -51,7 +56,7 @@ public class ItemInit {
 
     //TODO update CrystalBallItem as desired
 
-    //TODO add Dried plants
+    //TODO add Dried plants - jute mint sage wildflower
 
     //TODO add Blasting recipes for ALL mod ores??
 

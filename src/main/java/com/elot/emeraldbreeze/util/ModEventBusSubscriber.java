@@ -39,7 +39,7 @@ public class ModEventBusSubscriber {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event){
     // Apply Render types
-        RenderTypeLookup.setRenderLayer(BlockInit.CORELLIAN_CORN.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockInit.JUTE.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.GARLIC_CROP.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockInit.DEHYDRATOR.get(), RenderType.getSolid());
     // Assign tile entity renderer
