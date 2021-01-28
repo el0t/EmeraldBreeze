@@ -30,8 +30,8 @@ public class PouchContainer extends Container {
         int startX = 71;
         int startY = 33;
         int slotSizePlus2 = 18;
-        for(int row = 0; row < 1; row++){
-            for(int column = 0; column < 1; column++){
+        for(int row = 0; row < 2; row++){
+            for(int column = 0; column < 2; column++){
                 this.addSlot(new SlotItemHandler(this.itemHandler, (row*2)+column,
                         startX + (column*slotSizePlus2),
                         startY + (row*slotSizePlus2)));
