@@ -21,7 +21,7 @@ public class PouchItem extends Item {
     public PouchItem(Properties properties) {
         super(properties.maxStackSize(1));
     }
-    public int getInventorySize(ItemStack stack){ return 4; } //size of pouch = 4
+    public int getInventorySize(ItemStack stack){ return 4; } //size of base pouch = 4
     protected TranslationTextComponent getDefaultName(){
         return new TranslationTextComponent("container."+EmeraldBreeze.MOD_ID+".pouch");
     }
