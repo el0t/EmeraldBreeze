@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "emeraldbreeze:items/void_crystal"
+    "layer0": "emeraldbreeze:items/void_crystal",
+    "layer1": "emeraldbreeze:items/void_crystal_shadow"
   }
 }

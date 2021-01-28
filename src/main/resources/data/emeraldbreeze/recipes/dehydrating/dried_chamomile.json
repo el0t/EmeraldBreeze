@@ -1,0 +1,9 @@
+{
+  "type": "emeraldbreeze:dehydrating",
+  "output": {
+    "item": "emeraldbreeze:dried_chamomile"
+  },
+  "input": {
+    "item": "emeraldbreeze:chamomile"
+  }
+}

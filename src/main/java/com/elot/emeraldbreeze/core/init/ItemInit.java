@@ -18,7 +18,6 @@ public class ItemInit {
     public static final RegistryObject<Item> MITHRIL_INGOT = ITEMS.register("mithril_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> KODUR_INGOT = ITEMS.register("kodur_ingot", ()-> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> TOLMANITE_INGOT = ITEMS.register("tolmanite_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
-    //TODO texture for void crystal
     public static final RegistryObject<Item> SIMION_LUMP = ITEMS.register("simion_lump", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> VOID_CRYSTAL = ITEMS.register("void_crystal", () -> new Item(new Item.Properties().group(EmeraldBreeze.TAB)));
     //TODO add tolmanite armor and weapons
@@ -41,11 +40,19 @@ public class ItemInit {
     //TODO add assets, data etc for these new plants
     // as well as the blocks/crops associated with them
     public static final RegistryObject<Item> SAGE = ITEMS.register("sage", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> SPEARMINT = ITEMS.register("spearmint", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> PEPPERMINT = ITEMS.register("peppermint", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.TAB)));
+    public static final RegistryObject<Item> MINT = ITEMS.register("mint", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> CHAMOMILE = ITEMS.register("chamomile", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.TAB)));
-    public static final RegistryObject<Item> NETTLE = ITEMS.register("nettle", () -> new Item(new Item.Properties().food(ModFoods.NETTLE).group(EmeraldBreeze.TAB)));
+
+    //TODO nettle crop
+    public static final RegistryObject<Item> NETTLE_LEAF = ITEMS.register("nettle_leaf", () -> new Item(new Item.Properties().food(ModFoods.NETTLE).group(EmeraldBreeze.TAB)));
+
     //TODO add dried plants
+    // need all assets. (recipes done)
+    public static final RegistryObject<Item> DRIED_SAGE = ITEMS.register("dried_sage", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DRIED_MINT  = ITEMS.register("dried_mint", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DRIED_CHAMOMILE = ITEMS.register("dried_chamomile", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DRIED_NETTLE = ITEMS.register("dried_nettle", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DRIED_DANDELION = ITEMS.register("dried_dandelion", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> POPCORN = ITEMS.register("popcorn", () -> new Item(new Item.Properties().food(ModFoods.POPCORN).group(EmeraldBreeze.TAB)));
     public static final RegistryObject<Item> DRIED_BEEF = ITEMS.register("dried_beef", () -> new Item(new Item.Properties().food(ModFoods.DRIED_MEAT).group(EmeraldBreeze.TAB)));

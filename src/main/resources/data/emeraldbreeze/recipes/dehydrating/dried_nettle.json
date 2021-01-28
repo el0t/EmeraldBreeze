@@ -1,0 +1,9 @@
+{
+  "type": "emeraldbreeze:dehydrating",
+  "output": {
+    "item": "emeraldbreeze:dried_nettle"
+  },
+  "input": {
+    "item": "emeraldbreeze:nettle_leaf"
+  }
+}
