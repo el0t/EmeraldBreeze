@@ -1,0 +1,7 @@
+
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "emeraldbreeze:items/jute_fiber"
+  }
+}
