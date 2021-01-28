@@ -28,7 +28,7 @@ public class ModEventBusSubscriber {
         final IForgeRegistry<Item> registry = event.getRegistry();
         BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof ModCrop))
                 .map(RegistryObject::get).forEach(block -> {
-                    final Item.Properties properties = new Item.Properties().group(EmeraldBreeze.TAB);
+                    final Item.Properties properties = new Item.Properties().group(EmeraldBreeze.INDUSTRY);
                     final BlockItem blockItem = new BlockItem(block, properties);
                     blockItem.setRegistryName(Objects.requireNonNull(block.getRegistryName()));
                     registry.register(blockItem);

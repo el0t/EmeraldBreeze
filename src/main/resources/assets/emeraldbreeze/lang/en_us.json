@@ -1,6 +1,7 @@
 {
-  "itemGroup.eb1": "EmeraldBreeze",
-  "itemGroup.eb2": "EB Pouches",
+  "itemGroup.eb1": "EB Industry",
+  "itemGroup.eb2": "EB Plants",
+  "itemGroup.eb3": "EB Summoning",
   "item.emeraldbreeze.onyx": "Onyx",
   "block.emeraldbreeze.onyx_ore": "Onyx Ore",
   "block.emeraldbreeze.onyx_block": "Block of Onyx",

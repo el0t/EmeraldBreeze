@@ -11,6 +11,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.system.CallbackI;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("emeraldbreeze")
@@ -47,12 +48,17 @@ public class EmeraldBreeze
     }
 
     //Creative Mode tabs
-    public static final ItemGroup TAB = new ItemGroup("eb1") {
+    public static final ItemGroup INDUSTRY = new ItemGroup("eb1") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ItemInit.ONYX.get());
-        }};
-    public static final ItemGroup POU = new ItemGroup("eb2") {
+            return new ItemStack(ItemInit.MITHRIL_PICKAXE.get());
+        }
+    };
+    public static final ItemGroup PLANTS = new ItemGroup("eb2") {
+        @Override
+        public ItemStack createIcon() { return new ItemStack(ItemInit.NETTLE_LEAF.get()); }
+    };
+    public static final ItemGroup SUMMONING = new ItemGroup("eb3") {
         @Override
         public ItemStack createIcon() { return new ItemStack(ItemInit.POUCH.get()); }};
 
