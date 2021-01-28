@@ -17,9 +17,9 @@
   "block.emeraldbreeze.tolmanite_block": "Block of Tolmanite",
   "item.emeraldbreeze.tolmanite_ingot": "Tolmanite Ingot",
   "block.emeraldbreeze.simion_ore": "Simion Ore",
-
-  "block.emeraldbreeze.esmanite_ore": "Skylit Ore",
-
+  "item.emeraldbreeze.simion_lump": "Simion Lump",
+  "block.emeraldbreeze.esmanite_ore": "Esmanite Ore",
+  "item.emeraldbreeze.void_crystal": "Void Crystal",
   "item.emeraldbreeze.mithril_pickaxe": "Mithril Pickaxe",
   "item.emeraldbreeze.mithril_axe": "Mithril Axe",
   "item.emeraldbreeze.mithril_hoe": "Mithril Hoe",

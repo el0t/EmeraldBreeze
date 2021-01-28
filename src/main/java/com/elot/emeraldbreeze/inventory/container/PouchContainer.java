@@ -23,9 +23,6 @@ public class PouchContainer extends Container {
         this.item = getHeldPouch(playerInventory.player);
         this.itemHandler = ((PouchItem)this.item.getItem()).getInventory(this.item);
 
-        //TODO create container
-        // using blockedSlot to prevent pouch issue
-
         // Pouch inventory
         int startX = 71;
         int startY = 33;
