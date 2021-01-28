@@ -26,14 +26,32 @@ public class PouchContainer extends Container {
         // using blockedSlot to prevent pouch issue
 
         // Pouch inventory
+        int startX = 71;
+        int startY = 33;
+        int slotSizePlus2 = 18;
+        for(int row = 0; row < 1; row++){
+            for(int column = 0; column < 1; column++){
+                this.addSlot(new Slot(playerInventory, 9 + (row*2)+column,
+                        startX + (column*slotSizePlus2),
+                        startY + (row*slotSizePlus2)));
+            }
+        }
 
-        // Player inventory
-
+        //Player inventory
+        int startPlayerX = 8;
+        int startPlayerY = 84;
+        for(int row = 0; row < 3; row++){
+            for(int column = 0; column < 9; column++){
+                this.addSlot(new Slot(playerInventory, 9 + (row*9)+column,
+                        startPlayerX + (column*slotSizePlus2),
+                        startPlayerY + (row*slotSizePlus2)));
+            }
+        }
         // Hotbar
-        int hotbarY = 142; //TODO make pouch GUI - add hotbar Y
+        int hotbarY = 142;
         for(int column = 0; column < 9; column++){
             Slot slot = addSlot(
-                    new Slot(playerInventory, column, 1, hotbarY){
+                    new Slot(playerInventory, column, startPlayerX+(column*slotSizePlus2), hotbarY){
                         @Override
                         public boolean canTakeStack(PlayerEntity playerIn){ return slotNumber != blockedSlot; }
             });

@@ -26,7 +26,7 @@ public class PouchItem extends Item {
         return new TranslationTextComponent("container."+EmeraldBreeze.MOD_ID+".pouch");
     }
     public IItemHandler getInventory(ItemStack stack){
-        ModItemHandler itemHandler = new ModItemHandler(getInventorySize(stack));
+        ItemStackHandler itemHandler = new ItemStackHandler(getInventorySize(stack));
         itemHandler.deserializeNBT(stack.getOrCreateTag().getCompound("Inventory"));
         return itemHandler;
     }

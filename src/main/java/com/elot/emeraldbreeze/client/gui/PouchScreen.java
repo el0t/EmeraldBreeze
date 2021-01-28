@@ -9,7 +9,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-//TODO pouch screen class
 public class PouchScreen extends ContainerScreen<PouchContainer> {
     private final ResourceLocation BACKGROUND_TEXTURE =
             new ResourceLocation(EmeraldBreeze.MOD_ID, "textures/gui/container/pouch.png");
