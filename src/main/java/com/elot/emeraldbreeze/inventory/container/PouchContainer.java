@@ -10,6 +10,7 @@ import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.SlotItemHandler;
 
 
 public class PouchContainer extends Container {
@@ -31,7 +32,7 @@ public class PouchContainer extends Container {
         int slotSizePlus2 = 18;
         for(int row = 0; row < 1; row++){
             for(int column = 0; column < 1; column++){
-                this.addSlot(new Slot(playerInventory, (row*2)+column,
+                this.addSlot(new SlotItemHandler(this.itemHandler, (row*2)+column,
                         startX + (column*slotSizePlus2),
                         startY + (row*slotSizePlus2)));
             }
