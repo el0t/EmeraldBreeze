@@ -24,22 +24,25 @@ public class ModOreGen {
     private static final ArrayList<ConfiguredFeature<?, ?>> netherOres = new ArrayList<ConfiguredFeature<?, ?>>();
     private static final ArrayList<ConfiguredFeature<?, ?>> endOres = new ArrayList<ConfiguredFeature<?, ?>>();
 
-    private static ConfiguredFeature ONYX_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD,
-            BlockInit.ONYX_ORE.get().getDefaultState(), 3)) //vein size
-            .range(39).square()                       //spawn height
-            .func_242731_b(4);                        //frequency of veins per chunk
+    public static void registerOres() {
+
+        ConfiguredFeature ONYX_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD,
+                BlockInit.ONYX_ORE.get().getDefaultState(), 3)) //vein size
+                .range(39).square()                       //spawn height
+                .func_242731_b(4);                        //frequency of veins per chunk
     /* BASE_STONE_OVERWORLD is for generating in stone, granite, diorite, and andesite
         NETHERRACK is for generating in netherrack
        BASE_STONE_NETHER is for generating in netherrack, basalt and blackstone
        End ores can use a new BlockMatchRuleTest to generate in end stone           */
 
-    private static ConfiguredFeature SILVER_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.SILVER_ORE.get().getDefaultState(), 8)).range(64).square().func_242731_b(10);
-    private static ConfiguredFeature MITHRIL_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.MITHRIL_ORE.get().getDefaultState(), 6)).range(24).square().func_242731_b(6);
-    private static ConfiguredFeature KODUR_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.KODUR_ORE.get().getDefaultState(), 12)).withPlacement(Features.Placements.NETHER_SPRING_ORE_PLACEMENT).square().func_242731_b(10);
-    private static ConfiguredFeature TOLMANITE_ORE = Feature.NO_SURFACE_ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.TOLMANITE_ORE.get().getDefaultState(), 8)).range(42).square().func_242731_b(5);
-    private static ConfiguredFeature SIMION_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), BlockInit.SIMION_ORE.get().getDefaultState(), 4)).range(128).square().func_242731_b(6);
-    private static ConfiguredFeature ESMANITE_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), BlockInit.ESMANITE_ORE.get().getDefaultState(), 8)).range(128).square().func_242731_b(10);
-    public static void registerOres() {
+        ConfiguredFeature SILVER_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.SILVER_ORE.get().getDefaultState(), 8)).range(64).square().func_242731_b(10);
+        ConfiguredFeature MITHRIL_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, BlockInit.MITHRIL_ORE.get().getDefaultState(), 6)).range(24).square().func_242731_b(6);
+        ConfiguredFeature KODUR_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.KODUR_ORE.get().getDefaultState(), 12)).withPlacement(Features.Placements.NETHER_SPRING_ORE_PLACEMENT).square().func_242731_b(10);
+        ConfiguredFeature TOLMANITE_ORE = Feature.NO_SURFACE_ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.TOLMANITE_ORE.get().getDefaultState(), 8)).range(42).square().func_242731_b(5);
+        ConfiguredFeature SIMION_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), BlockInit.SIMION_ORE.get().getDefaultState(), 4)).range(128).square().func_242731_b(6);
+        ConfiguredFeature ESMANITE_ORE = Feature.ORE.withConfiguration(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE), BlockInit.ESMANITE_ORE.get().getDefaultState(), 8)).range(128).square().func_242731_b(10);
+
+
 
         //Overworld Ores
         overworldOres.add(register("onyx_ore", ONYX_ORE)); //frequency of veins per chunk
