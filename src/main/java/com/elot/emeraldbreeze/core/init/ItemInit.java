@@ -56,6 +56,7 @@ public class ItemInit {
     public static final RegistryObject<Item> DRIED_CHAMOMILE = ITEMS.register("dried_chamomile", () -> new Item(new Item.Properties().group(EmeraldBreeze.PLANTS)));
     public static final RegistryObject<Item> DRIED_NETTLE = ITEMS.register("dried_nettle", () -> new Item(new Item.Properties().group(EmeraldBreeze.PLANTS)));
     public static final RegistryObject<Item> DRIED_DANDELION = ITEMS.register("dried_dandelion", () -> new Item(new Item.Properties().group(EmeraldBreeze.PLANTS)));
+    public static final RegistryObject<Item> DRIED_ROSE = ITEMS.register("dried_rose", () -> new Item(new Item.Properties().group(EmeraldBreeze.PLANTS)));
 
     public static final RegistryObject<Item> POPCORN = ITEMS.register("popcorn", () -> new Item(new Item.Properties().food(ModFoods.POPCORN).group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> DRIED_BEEF = ITEMS.register("dried_beef", () -> new Item(new Item.Properties().food(ModFoods.DRIED_MEAT).group(EmeraldBreeze.INDUSTRY)));
