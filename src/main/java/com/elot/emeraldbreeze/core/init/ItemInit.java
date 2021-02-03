@@ -19,8 +19,11 @@ public class ItemInit {
     public static final RegistryObject<Item> KODUR_INGOT = ITEMS.register("kodur_ingot", ()-> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> TOLMANITE_INGOT = ITEMS.register("tolmanite_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> SIMION_LUMP = ITEMS.register("simion_lump", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
+    //TODO add simion ingot
+    public static final RegistryObject<Item> SIMION_INGOT = ITEMS.register("simion_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> VOID_CRYSTAL = ITEMS.register("void_crystal", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     //TODO add tolmanite armor and weapons
+    // (added item and armor tiers - simion and kodur only use for tools right now)
     public static final RegistryObject<Item> MITHRIL_SWORD = ITEMS.register("mithril_sword", () -> new SwordItem(ModItemTier.MITHRIL, 3, -2.4F, new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> MITHRIL_PICKAXE = ITEMS.register("mithril_pickaxe", () -> new PickaxeItem(ModItemTier.MITHRIL, 1, -2.8F, new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> MITHRIL_SHOVEL = ITEMS.register("mithril_shovel", () -> new ShovelItem(ModItemTier.MITHRIL, 1.5F, -3.0F, new Item.Properties().group(EmeraldBreeze.INDUSTRY)));

@@ -2,6 +2,7 @@ package com.elot.emeraldbreeze.items;
 
 import com.elot.emeraldbreeze.core.init.ItemInit;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 
@@ -18,9 +19,14 @@ public enum ModItemTier implements IItemTier {
 
     //Mod items
 
+    SIMION(1, 69, 2.0F, 1.0F, 31, () -> {
+        return toIngredient(ItemInit.SIMION_LUMP.get()); }),
+    KODUR(2, 125, 5.0F, 2.0F, 5, () -> {
+        return toIngredient(ItemInit.KODUR_INGOT.get()); }),
     MITHRIL(3, 750, 8.0F, 3.0F, 9, () -> {
-        return Ingredient.fromItems(ItemInit.MITHRIL_INGOT.get());
-    });
+        return toIngredient(ItemInit.MITHRIL_INGOT.get()); }),
+    TOLMANITE(4, 1015, 9.0F, 4.0F, 12, () -> {
+        return toIngredient(ItemInit.TOLMANITE_INGOT.get()); });
 
     private ModItemTier(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Supplier<Ingredient> repairMaterialIn){
         this.harvestLevel = harvestLevelIn;
@@ -62,4 +68,5 @@ public enum ModItemTier implements IItemTier {
     public Ingredient getRepairMaterial() {
         return repairMaterial.getValue();
     }
+    private static Ingredient toIngredient(Item item){ return Ingredient.fromItems(item); }
 }

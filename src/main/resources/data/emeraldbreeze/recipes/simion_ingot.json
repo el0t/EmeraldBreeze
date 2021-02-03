@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "emeraldbreeze:simion_lump"
+    }
+  },
+  "result": {
+    "item": "emeraldbreeze:simion_ingot",
+    "count": 1
+  }
+}

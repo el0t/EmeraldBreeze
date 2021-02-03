@@ -4,6 +4,7 @@ import com.elot.emeraldbreeze.EmeraldBreeze;
 import com.elot.emeraldbreeze.core.init.ItemInit;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
@@ -26,8 +27,9 @@ public enum ModArmorMaterial implements IArmorMaterial {
     //Mod items
 
     MITHRIL(EmeraldBreeze.MOD_ID+":mithril", 33, new int[]{3, 5, 7, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_GOLD,
-            2.0F, 0.0F, () -> { return Ingredient.fromItems(ItemInit.MITHRIL_INGOT.get());
-    });
+            2.0F, 0.0F, () -> { return toIngredient(ItemInit.MITHRIL_INGOT.get()); }),
+    TOLMANITE(EmeraldBreeze.MOD_ID+":tolmanite", 37, new int[]{3,6,8,3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+            3.0F, 0.25F, () -> { return toIngredient(ItemInit.TOLMANITE_INGOT.get()); });
 
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[]{13, 15, 16, 11};
@@ -51,37 +53,27 @@ public enum ModArmorMaterial implements IArmorMaterial {
         this.repairMaterial = new LazyValue<>(repairMaterialSupplier);
     }
 
-    public int getDurability(EquipmentSlotType slotIn) {
-        return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
-    }
-
-    public int getDamageReductionAmount(EquipmentSlotType slotIn) {
-        return this.damageReductionAmountArray[slotIn.getIndex()];
-    }
-
+    public int getDurability(EquipmentSlotType slotIn) { return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor; }
+    public int getDamageReductionAmount(EquipmentSlotType slotIn) { return this.damageReductionAmountArray[slotIn.getIndex()]; }
     public int getEnchantability() {
         return this.enchantability;
     }
-
     public SoundEvent getSoundEvent() {
         return this.soundEvent;
     }
-
     public Ingredient getRepairMaterial() {
         return this.repairMaterial.getValue();
     }
-
     @OnlyIn(Dist.CLIENT)
     public String getName() {
         return this.name;
     }
-
     public float getToughness() {
         return this.toughness;
     }
-
     @Override
     public float getKnockbackResistance() {
         return knockbackResistance;
     }
+    private static Ingredient toIngredient(Item item){ return Ingredient.fromItems(item); }
 }
