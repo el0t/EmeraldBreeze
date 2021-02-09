@@ -9,18 +9,6 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "minecraft:grass",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "item": "minecraft:shears"
-                  }
-                }
-              ]
-            },
-            {
-              "type": "minecraft:item",
               "name": "emeraldbreeze:jute_seed",
               "functions": [
                 {
@@ -82,6 +70,18 @@
                 {
                   "condition": "minecraft:random_chance",
                   "chance": 0.1
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:grass",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "item": "minecraft:shears"
+                  }
                 }
               ]
             }
