@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:block",
+  "type": "minecraft:grass",
   "pools": [
     {
       "rolls": 1,
@@ -9,6 +9,7 @@
           "children": [
             {
               "type": "minecraft:item",
+              "name": "minecraft:grass",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
@@ -16,17 +17,11 @@
                     "item": "minecraft:shears"
                   }
                 }
-              ],
-              "name": "minecraft:grass"
+              ]
             },
             {
               "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.125
-                }
-              ],
+              "name": "emeraldbreeze:jute_seed",
               "functions": [
                 {
                   "function": "minecraft:apply_bonus",
@@ -34,23 +29,46 @@
                   "formula": "minecraft:uniform_bonus_count",
                   "parameters": {
                     "bonusMultiplier": 2
-                  }
-                },
-                {
-                  "function": "minecraft:explosion_decay"
+                  },
+                  "conditions": [
+                    {
+                      "condition": "minecraft:random_chance",
+                      "chance": 0.05
+                    }
+                  ]
                 }
-              ],
-              "name": "minecraft:wheat_seeds"
+              ]
             },
             {
               "type": "minecraft:item",
+              "name": "emeraldbreeze:garlic_seed",
+              "functions": [
+                {
+                  "function": "minecraft:explosion_decay"
+                },
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:uniform_bonus_count",
+                  "parameters": {
+                    "bonusMultiplier": 2
+                  }
+                }
+              ],
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
                   "chance": 0.05
                 }
-              ],
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:wheat_seeds",
               "functions": [
+                {
+                  "function": "minecraft:explosion_decay"
+                },
                 {
                   "function": "minecraft:apply_bonus",
                   "enchantment": "minecraft:fortune",
@@ -58,12 +76,14 @@
                   "parameters": {
                     "bonusMultiplier": 2
                   }
-                },
-                {
-                  "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "emeraldbreeze:garlic_seed"
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.1
+                }
+              ]
             }
           ]
         }
