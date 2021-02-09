@@ -19,7 +19,6 @@ public class ItemInit {
     public static final RegistryObject<Item> KODUR_INGOT = ITEMS.register("kodur_ingot", ()-> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> TOLMANITE_INGOT = ITEMS.register("tolmanite_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> SIMION_LUMP = ITEMS.register("simion_lump", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
-    //TODO add simion ingot
     public static final RegistryObject<Item> SIMION_INGOT = ITEMS.register("simion_ingot", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     public static final RegistryObject<Item> VOID_CRYSTAL = ITEMS.register("void_crystal", () -> new Item(new Item.Properties().group(EmeraldBreeze.INDUSTRY)));
     //TODO add tolmanite armor and weapons
@@ -70,12 +69,12 @@ public class ItemInit {
 
     public static final RegistryObject<Item> POUCH = ITEMS.register("pouch", () -> new PouchItem(new Item.Properties().maxStackSize(1).group(EmeraldBreeze.SUMMONING)));
 
-    //TODO FUTURE
+    //TODO Future
     // Add kodur ring
     // update CrystalBallItem as desired
     // Add herbs which can be grown in plant pots
     // Add Blasting recipes for ALL mod ores??
     // Add silver dagger, silver arrows
-    // Add cursebreaker item
+    // Add cursed chest
 
 }

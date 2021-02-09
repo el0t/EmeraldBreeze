@@ -33,6 +33,8 @@ public class BlockInit {
     public static final RegistryObject<Block> JUTE = BLOCKS.register("jute", () -> new ModCrop(AbstractBlock.Properties.from(Blocks.WHEAT)));
     public static final RegistryObject<Block> GARLIC_CROP = BLOCKS.register("garlic", () -> new ModCrop(AbstractBlock.Properties.from(Blocks.POTATOES)));
     //TODO add the crop/blocks for herbs
+    // nettle crop - grows on grass
+    // other herbs - grow only in plant pots
 
     public static final RegistryObject<Block> DEHYDRATOR = BLOCKS.register("dehydrator", () -> new DehydratorBlock(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(2.0f)));
 
