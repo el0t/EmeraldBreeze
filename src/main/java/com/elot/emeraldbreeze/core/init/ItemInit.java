@@ -43,6 +43,8 @@ public class ItemInit {
     // as well as the blocks/crops associated with them
     public static final RegistryObject<Item> SAGE = ITEMS.register("sage", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.PLANTS)));
     public static final RegistryObject<Item> MINT = ITEMS.register("mint", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.PLANTS)));
+        //need source
+        //test chamo source
     public static final RegistryObject<Item> CHAMOMILE = ITEMS.register("chamomile", () -> new Item(new Item.Properties().food(ModFoods.SAFE_HERBS).group(EmeraldBreeze.PLANTS)));
 
     //TODO nettle crop
